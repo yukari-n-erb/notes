@@ -103,16 +103,22 @@ The prerequisite is one year of coding and high school math.
 受講の前提条件1年間のコーディング経験と高校レベルの数学です。
 
 
-### What people say about deep learning which are either pointless or untrue [[9:05](https://youtu.be/BWWm4AzsdLk?t=545)]
+### What people say about deep learning which are either pointless or untrue ディープラーニングに対して言われる無意味な批判または正しくないこと [[9:05](https://youtu.be/BWWm4AzsdLk?t=545)]
 
 ![](lesson1/5.png)
 
 - It's not a black box. It's really great for interpreting what's going on.
+ブラックボックスではありません。何が起きたのかを解釈することは本当に素晴らしいことです。
 - It does not need much data for most practical applications.
+大半の実用的なアプリケーションには大量のデータは必要ありません。
 - You don't need a PhD. Rachel has one so it doesn't actually stop you from doing deep learning if you have a PhD.
+博士号は必要ありません。レイチェルは博士号を持っていますので、もしあなたが博士号を持っていてもディープラーニングをすることを妨げることはありません。
 - It can be used very widely for lots of different applications, not just for vision.
+たくさんの異なる幅広いアプリケーションに利用できます、決して画像認識だけではありません。
 - You don't need lots of hardware. 36 cents an hour server is more than enough to get world-class results for most problems.
+ハードウェアは必要ありません。ほとんどの問題に対して世界クラスの成果を出すためには、一時間あたり36セントのサーバーで十分です。
 - It is true that maybe this is not going to help you build a sentient brain, but that's not our focus. We are focused on solving interesting real-world problems.
+これで知性のある頭脳を作れるわけではないのということは本当ですが、しかし関心があることはそこではありません。我々は現実世界の興味深い問題を解決することに焦点を当てています。
 
 
 
@@ -122,23 +128,26 @@ The prerequisite is one year of coding and high school math.
 
 Baseball vs. Cricket - An example by Nikhil of what you are going to be able to do by the end of lesson 1:
 
+野球　VS　クリケット　-　ニヒルによる、レッスン1の完了までにあなたができるようになることの一例
 
 
-### Topdown approach [[11:02](https://youtu.be/BWWm4AzsdLk?t=662)]
+### Topdown approach トップダウンアプローチ [[11:02](https://youtu.be/BWWm4AzsdLk?t=662)]
 
 ![](lesson1/7.png)
 
 We are going to start by looking at code which is different to many of academic courses. We are going to learn to build a useful thing today. That means that at the end of today, you won't know all the theory. There will be lots of aspects of what we do that you don't know why or how it works. That's okay! You will learn why and how it works over the next 7 weeks. But for now, we've found that what works really well is to actually get your hands dirty coding - not focusing on theory. 
 
+我々は多くのほかのアカデミックな講義とは違い、実際にコードを見ていくことから始めます。実用的なものを作ることを今日眞井ます。これはつまり今日の講義が終わった段階では、あなたはすべての理論を知らないということです。それがなぜどのように動くのかを理解できないままでしょう。それでOK!なぜ・どのように動くのかは次の7週間で学びます。今は、自分の手で綺麗ではない - 理論に基づかない - コードを書くことが本当に良いことであるとが分かるようになるでしょう。
 
 
-## What's your pet [[12:26](https://youtu.be/BWWm4AzsdLk?t=746)]
+
+## What's your pet どれがあなたのペット [[12:26](https://youtu.be/BWWm4AzsdLk?t=746)]
 
 [lesson1-pets.ipynb](https://github.com/fastai/course-v3/blob/master/nbs/dl1/lesson1-pets.ipynb)
 
-<kbd>Shift</kbd>+<kbd>Enter</kbd> to run a cell
+<kbd>Shift</kbd>+<kbd>Enter</kbd> to run a cell セルを実行します
 
-These three lines is what we start every notebook with:
+These three lines is what we start every notebook with: 毎回ノートブックを開始する際の3行のコード
 ```
 %reload_ext autoreload
 %autoreload 2
@@ -146,49 +155,72 @@ These three lines is what we start every notebook with:
 ```
 These things starting `%` are special directives to Jupyter Notebook itself, they are not Python code. They are called "magics."
 
-- If somebody changes underlying library code while I'm running this, please reload it automatically
-- If somebody asks to plot something, then please plot it here in this Jupyter Notebook
+ `%` で始まるものはPythonコードではないJupyter Notebook自身に対する命令で、”マジック”と呼ばれるものです。
 
-The next two lines load up the fastai library:
+- If somebody changes underlying library code while I'm running this, please reload it automatically
+実行中のライブラリに変更があったら、自動的に再読みする
+- If somebody asks to plot something, then please plot it here in this Jupyter Notebook
+プロットに関して問い合わせがあったら、このJupyter Notebookに対してプロットする
+
+The next two lines load up the fastai library: 次の二行でfastaiライブラリを読み込む:
 
 ```python
 from fastai import *
 from fastai.vision import *
 ```
 
-What is fastai library? [http://docs.fast.ai/](http://docs.fast.ai/)
+What is fastai library? fastaiライブラリとは？ [http://docs.fast.ai/](http://docs.fast.ai/)
 
 Everything we are going to do is going to be using either fastai or [PyTorch](https://pytorch.org/) which fastai sits on top of. PyTorch is fast growing extremely popular library. We use it because we used to use TensorFlow a couple years ago and we found we can do a lot more, a lot more quickly with PyTorch. 
 
-Currently fastai supports four applications:
+これから実行しようとするものは全てfastaiか[PyTorch](https://pytorch.org/)上で実行されます。PyTorchは急速に成長している極めてポピュラーなライブラリです。二年前まではTensorFlowを利用していましたが、PyTorchのほうが更に手早く物事を実行できるためにこれを利用しています。
+
+
+
+Currently fastai supports four applications: 現在fastaiがサポートする4つのアプリケーション:
 
 1. Computer vision
+コンピュータビジョン
 2. Natural language text
+自然言語文章
 3. Tabular data
+表形式データ
 4. Collaborative filtering
+協調フィルタリング
 
 
 [[15:45](https://youtu.be/BWWm4AzsdLk?t=945)]
 
-`import *` - something you've all been told to never ever do.
+`import *` - something you've all been told to never ever do. あなたが決してしないように言われたこと
 
 There are very good reasons to not use `import *` in standard production code with most libraries. But things like MATLAB is the opposite. Everything is there for you all the time. You don't even have to import things a lot of the time. It's kind of funny - we've got these two extremes of how do I code. The scientific programming community has one way, and then software engineering community has the other. Both have really good reasons for doing things. 
 
+ ほとんどのライブラリでは標準的に`import *`を使わないようにとされているのはとても良い理由があります。しかしMATLABのようなものは反対です。すべてのことはあなたのためにあります。あなたは多くの時間をインポートすることに割くべきではない。でもこれはすこしおかしい - これはどのようにコーディングすべきかということに対する正反対のことです。科学プログラミングコミュニティにはある一つの手法があります、しかしエンジニアリングコミュニティにもまた同じようにあります。二つともそうる良い理由があるのです。
+
 With the fastai library, we actually support both approaches. In Jupyter Notebook where you want to be able to quickly interactively try stuff out, you don't want to constantly going back up to the top and importing more stuff. You want to be able to use lots of tab complete and be very experimental, so `import *` is great. When you are building stuff in production, you can do the normal PEP8 style proper software engineering practices. This is a different style of coding. It's not that there are no rules in data science programming, the rules are different. When you're training models, the most important thing is to be able to interactively experiment quickly. So you will see we use a lot of different processes, styles, and stuff to what you are used to. But they are there for a reason and you'll learn about them over time. 
+
+fastaiライブラリでは、どちらの手法もサポートしました。対話的にたくさんのことを試したいJupyter Notebook上では、あなたは常に上へ戻って更に沢山のインポートをしたくはないでしょう。あなたが多くのタブを開いて実験を比較するなら、`import *` することがいいでしょうあなたが多くのものを作り出したいときには、ソフトウェアエンジニアリングの知見に基づいたPEP8コーディング規約で行うでしょう。これは異なるスタイルのコーディング手法です。データサイエンスプログラミングではルールがないわけではなありません、ルールが異なるだけです。モデルを訓練するとき、最も関心があることは素早く対話的に実験ができるかということです。なので、私たちはあなたが使い慣れているプロセス・スタイル・その他たくさんのものとは違うものが使われているのをみるでしょう。しかし、それらには理由があり、時間とともにそれを学んでいくでしょう。
 
 The other thing to mention is that the fastai library is designed in a very interesting modular way and when you do use import *, there's far less clobbering of things than you might expect. It's all explicitly designed to allow you to pull in things and use them quickly without having problems.
 
-## Looking at the data [[17:56](https://youtu.be/BWWm4AzsdLk?t=1076)]
+もう一つ取り上げることとして、fastaiライブラリは興味深いモジュラー方式で設計されており、import * を使う場面はあなたの予想より遥かに少ないでしょう。これはあなたが何事も問題なく実行できるように全て明確に設計されているからです。
 
-Two main places that we will be tending to get data from for the course:
 
-1. Academic datasets
+## Looking at the data データを見る [[17:56](https://youtu.be/BWWm4AzsdLk?t=1076)]
+
+Two main places that we will be tending to get data from for the course: このコースでデータを取得しにいく傾向がある二つの場所
+
+1. Academic datasets アカデミックデータシート
     - Academic datasets are really important. They are really interesting. They are things where academics spend a lot of time curating and gathering a dataset so that they can show how well different kinds of approaches work with that data. The idea is they try to design datasets that are challenging in some way and require some kind of breakthrough to do them well. 
+    アカデミックデータシートはとても重要です。ここは本当に興味深い。このアカデミックではデータに対して様々な手法がどのように働くかを示すデータセットを収集・整理することにたくさんの時間を費やしています。このアイデアは、データセットにチャレンジして様々なブレイクスルーを起こすようにするために設計されています。
     - We are going to start with an academic dataset called the pet dataset.
-2. Kaggle competition datasets
-  
+    私たちはアカデミックデータセットの「ペットデータセット」と呼ばれるものから始めます。
+2. Kaggle competition datasets　Kaggle大会のデータセット
+ 
 
 Both types of datasets are interesting for us particularly because they provide strong baseline. That is to say you want to know if you are doing a good job. So with Kaggle datasets that come from a competition, you can actually submit your results to Kaggle and see how well you would have gone in that competition. If you can get in about the top 10%, then I'd say you are doing pretty well.
+
+
 
 Academic datasets, academics write down in papers what the state of the art is so how well did they go with using models on that dataset. So this is what we are going to do. We are going to try to create models that get right up towards the top of Kaggle competitions, preferably in the top 10, not just top 10% or that meet or exceed academic state-of-the-art published results. So when you use an academic dataset, it's important to cite it. You don't need to read that paper right now, but if you are interested in learning more about it and why it was created and how it was created, all the details are there. 
 
