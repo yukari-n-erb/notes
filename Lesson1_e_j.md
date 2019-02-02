@@ -137,7 +137,7 @@ Baseball vs. Cricket - An example by Nikhil of what you are going to be able to 
 
 We are going to start by looking at code which is different to many of academic courses. We are going to learn to build a useful thing today. That means that at the end of today, you won't know all the theory. There will be lots of aspects of what we do that you don't know why or how it works. That's okay! You will learn why and how it works over the next 7 weeks. But for now, we've found that what works really well is to actually get your hands dirty coding - not focusing on theory. 
 
-我々は多くのほかのアカデミックな講義とは違い、実際にコードを見ていくことから始めます。実用的なものを作ることを今日眞井ます。これはつまり今日の講義が終わった段階では、あなたはすべての理論を知らないということです。それがなぜどのように動くのかを理解できないままでしょう。それでOK!なぜ・どのように動くのかは次の7週間で学びます。今は、自分の手で綺麗ではない - 理論に基づかない - コードを書くことが本当に良いことであるとが分かるようになるでしょう。
+我々は多くのほかのアカデミックな講義とは違い、実際にコードを見ていくことから始めます。実用的なものを作ることを今日は学びます。これはつまり今日の講義が終わった段階では、あなたはすべての理論を知らないということです。それがなぜどのように動くのかを理解できないままでしょう。それでOK!なぜ・どのように動くのかは次の7週間で学びます。今は、自分の手で綺麗ではない - 理論に基づかない - コードを書くことが本当に良いことであるとが分かるようになるでしょう。
 
 
 
@@ -220,15 +220,20 @@ Two main places that we will be tending to get data from for the course: この�
 
 Both types of datasets are interesting for us particularly because they provide strong baseline. That is to say you want to know if you are doing a good job. So with Kaggle datasets that come from a competition, you can actually submit your results to Kaggle and see how well you would have gone in that competition. If you can get in about the top 10%, then I'd say you are doing pretty well.
 
+どちらのデータでっとも私たちに強力な基準を提供するという意味で非常に興味深いです。それはあなたが良い結果を出せたかどうかを知りたいということです。Kaggleの大会でのデータセットでは、あなたは実際に結果をKaggleに提出して、そのコンペでどれだけ上手くやれたかを知ることができます。もしトップ10%以内にいるのなら、非常によくできたと言えるでしょう。
 
 
 Academic datasets, academics write down in papers what the state of the art is so how well did they go with using models on that dataset. So this is what we are going to do. We are going to try to create models that get right up towards the top of Kaggle competitions, preferably in the top 10, not just top 10% or that meet or exceed academic state-of-the-art published results. So when you use an academic dataset, it's important to cite it. You don't need to read that paper right now, but if you are interested in learning more about it and why it was created and how it was created, all the details are there. 
 
+アカデミックデータシートでは、最先端の論文にそのデータセットにおいてどのようなモデルが使われたかが記載されています。それが私たちが今からやろうとしていることです。私たちはKaggleのコンペでトップ10%ではなくトップに入ったり、アカデミックの最先端の結果を上回すモデルを作ることにチャレンジします。そのあめ、アカデミックデータシートを使用するときは、それを引用することが大切です。今はまだその論文を読む必要はありませんが、もしあなたがそれがなぜどのように作られたかに関心を持ったとき、その詳細がそこにあるからです。
+
 Pet dataset is going to ask us to distinguish between 37 different categories of dog breed and cat breed. So that's really hard. In fact, every course until this one, we've used a different dataset which is one where you just have to decide if something is a dog or a cat. So you've got a 50-50 chance right away and dogs and cats look really different. Or else lots of dog breeds and cat breeds look pretty much the same. 
+
+ペットデータセットでは37種類の犬と猫の品種を分類するように求められます。これはとても難しいことです、実際、これより前のコースでは、私たちは犬か猫かだけを分類するという違うデータセットを使用していました。これは半々の確率であり、実際犬と猫は本当に異なっているように見えます。他方、多くの犬種と猫種は同じように見えます。
 
 So why have we changed the dataset? We've got to the point now where deep learning os so fast and so easy that the dogs versus cats problem which a few years ago was considered extremely difficult ~80% accuracy was the state of the art, it's now too easy. Our models were basically getting everything right all the time without any tuning and so there weren't really a lot of opportunities for me to show you how to do more sophisticated stuff. So we've picked a harder problem this year. 
 
-
+なぜデータセットを変えたのか？犬と猫を素早く簡単に分類できることは数年前まではとても難しく、実際最先端の結果えも80%程度までの精度しかなかったが、現在では非常に簡単です。私たちのモデルは基本的に調整しなくとも上手くいっていたので、もっと洗練された手法を見せる機会があまりありませんでした。そこで、今年はもっと難しい問題を選んだのです。
 
 [[20:51](https://youtu.be/BWWm4AzsdLk?t=1251)]
 
