@@ -37,14 +37,22 @@ Four shortcuts:
 
 Jupyter Notebook is a really interesting device for data scientists because it lets you run interactive experiments and give you not just a static piece of information but something you can interactively experiment with.
 
+Jupyter Notebookはデータサイエンティストにとって大変面白いデバイスです。なぜなら対話的な実験を行うことができ、静的な情報だけでなく対話的に実験した情報も得ることができるからです。
+
 How to use notebooks and the materials well based on the last three years of experience:
+
+過去3年間の講義に基づいたこのノートと資料の使用方法
 
 1. Just watch a lesson end to end. 
    - Don't try to follow along because it's not really designed to go the speed where you can follow along. It's designed to be something where you just take in the information, you get a general sense of all the pieces, how it all fits together.
    - Then you can go back and go through it more slowly pausing the video, trying things out, making sure that you can do the things that I'm doing and you can try and extend them to do things in your own way.
    - Don't try and stop and understand everything the first time. 
 
-
+1. 講義を端から端まで見ましょう
+   - 話についていこうとしてはいけません、なぜなら講義はあなたがついていけるスピードで設計されていません。どのような仕組みになっているのか、全体的な概要を知ることを想定しています。
+   - その後、改めて動画をゆっくりと一時停止しながら確認し、実際に実行して確認し、また自分なりのやり方で拡張してみましょう。
+   - 一回で全てを理解しようとしてはいけません。
+   
 
 ### You can do world-class practitioner level deep learning [[4:31](https://youtu.be/BWWm4AzsdLk?t=271)]
 
