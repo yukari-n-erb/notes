@@ -43,22 +43,18 @@ How to use notebooks and the materials well based on the last three years of exp
 
 過去3年間の講義に基づいたこのノートと資料の使用方法
 
-1. Just watch a lesson end to end. 
-   - Don't try to follow along because it's not really designed to go the speed where you can follow along. It's designed to be something where you just take in the information, you get a general sense of all the pieces, how it all fits together.
-   - Then you can go back and go through it more slowly pausing the video, trying things out, making sure that you can do the things that I'm doing and you can try and extend them to do things in your own way.
-   - Don't try and stop and understand everything the first time. 
+1. Just watch a lesson end to end. 講義を一通り視聴する
+   - Don't try to follow along because it's not really designed to go the speed where you can follow along. It's designed to be something where you just take in the information, you get a general sense of all the pieces, how it all fits together.話についていこうとしてはいけません、なぜなら講義はあなたがついていけるスピードで設計されていません。どのような仕組みになっているのか、全体的な概要を知ることを想定しています。
+   - Then you can go back and go through it more slowly pausing the video, trying things out, making sure that you can do the things that I'm doing and you can try and extend them to do things in your own way.その後、改めて動画をゆっくりと一時停止しながら確認し、実際に実行して確認し、また自分なりのやり方で拡張してみましょう。
+   - Don't try and stop and understand everything the first time. 一回で全てを理解しようとしてはいけません。
 
-1. 講義を端から端まで見ましょう
-   - 話についていこうとしてはいけません、なぜなら講義はあなたがついていけるスピードで設計されていません。どのような仕組みになっているのか、全体的な概要を知ることを想定しています。
-   - その後、改めて動画をゆっくりと一時停止しながら確認し、実際に実行して確認し、また自分なりのやり方で拡張してみましょう。
-   - 一回で全てを理解しようとしてはいけません。
-   
 
-### You can do world-class practitioner level deep learning [[4:31](https://youtu.be/BWWm4AzsdLk?t=271)]
+
+### You can do world-class practitioner level deep learning 世界クラスの専門家並のディープラーニングができる[[4:31](https://youtu.be/BWWm4AzsdLk?t=271)]
 
 ![](lesson1/1.png)
 
-Main places to be looking for things are:
+Main places to be looking for things are: 資料の主な場所:
 - [http://course-v3.fast.ai/](http://course-v3.fast.ai/)
 - [https://forums.fast.ai/](https://forums.fast.ai/latest)
 
@@ -66,7 +62,7 @@ Main places to be looking for things are:
 
 
 
-### A little bit about why we should listen to Jeremy [[5:27](https://youtu.be/BWWm4AzsdLk?t=327)]
+### A little bit about why we should listen to Jeremy ジェレミーについて少しご紹介 [[5:27](https://youtu.be/BWWm4AzsdLk?t=327)]
 
 ![](lesson1/2.png)
 
@@ -74,7 +70,7 @@ Main places to be looking for things are:
 
 
 
-### Using machine learning to do useful things [[6:48](https://youtu.be/BWWm4AzsdLk?t=408)]
+### Using machine learning to do useful things　マシンラーニングを使うために役立つこと  [[6:48](https://youtu.be/BWWm4AzsdLk?t=408)]
 
 ![](lesson1/3.png)
 
@@ -86,18 +82,25 @@ Main places to be looking for things are:
 
 If you follow along with 10 hours a week or so approach for the 7 weeks, by the end, you will be able to:
 
+１週ごとに10時間復習し、7週間講義を終えると、次のことが可能になります:
+
 1. Build an image classification model on pictures that you choose that will work at a world class level
+あなたが選んだ写真で、世界クラスレベルの画像識別モデルを作成できます
 2. Classify text using whatever datasets you're interested in
+あなたの興味があるデータセットを利用した文章分類
 3. Make predictions of commercial applications like sales
+商用アプリケーションのような売り上げ予測
 4. Build recommendation systems such as the one used by Netflix
+Netflixのような推薦システム
 
 Not toy examples of any of these but actually things that can come top 10 in Kaggle competitions, that can beat everything that's in the academic community. 
 
+これらはおもちゃようなものではなく実際にKaggleの大会でトップ10に入ることのできるような、学術界隈のすべてのものに勝るようなものです。
+
+
 The prerequisite is one year of coding and high school math.
 
-
-
-
+受講の前提条件1年間のコーディング経験と高校レベルの数学です。
 
 
 ### What people say about deep learning which are either pointless or untrue [[9:05](https://youtu.be/BWWm4AzsdLk?t=545)]
