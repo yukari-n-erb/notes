@@ -6,24 +6,30 @@
 ## Welcome! ようこそ！
 
 Make sure your GPU environment is set up and you can run Jupyter Notebook
+
 GPU環境を構築してJupyter Notebookを起動できるようにしてください
 
 [00_notebook_tutorial.ipynb](https://github.com/fastai/course-v3/blob/master/nbs/dl1/00_notebook_tutorial.ipynb)
 
 
 Four shortcuts:
+
 4個のショートカット：
 
 - <kbd>Shift</kbd>+<kbd>Enter</kbd>: Runs the code or markdown on a cell
+
 コードを実行するか下のセルへ移動する
 
 - <kbd>Up Arrow</kbd>+<kbd>Down Arrow</kbd>: Toggle across cells
+
 セルを切り替える
 
 - <kbd>b</kbd>: Create new cell
+
 新しいセルを作成する
 
 - <kbd>0</kbd>+<kbd>0</kbd>: Restart Kernel
+
 カーネルを再起動する
 
 
