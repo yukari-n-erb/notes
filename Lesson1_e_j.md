@@ -239,9 +239,13 @@ So why have we changed the dataset? We've got to the point now where deep learni
 
 This kind of thing where you have to distinguish between similar categories is called fine grained classification in the academic context.  
 
+似たようなカテゴリを分類することは、学術用語で「細粒度分類」と言います。
+
 ### untar_data
 
 The first thing we have to do is download and extract the data that we want. We're going to be using this function called `untar_data` which will download it automatically and untar it. AWS has been kind enough to give us lots of space and bandwidth for these datasets so they'll download super quickly for you.
+
+最初にデータをダウンロードして任意の場所に展開します。`untar_data` と呼ばれる関数を使うとダウンロードしたものを自動的に展開します。AWSはこれらのデータセットを利用するために十分な容量と帯域幅を確保してくれているので、すぐに完了するでしょう。
 
 ```python
 path = untar_data(URLs.PETS); path
@@ -251,7 +255,11 @@ path = untar_data(URLs.PETS); path
 
 The first question then would be how do I know what `untar_data` does. You could just type help and you will find out what module it came from (since we did `import *` you don't necessarily know that), what it does, and something you might not have seen before even if you are an experienced programmer is what exactly you pass to it. You're probably used to seeing the names: url, fname, dest, but you might not be used to seeing `Union[pathlib.Path, str]`. These bits are types and if you're used to typed programming language, you would be used to seeing them, but Python programmers are less used to it. But if you think about it, you don't actually know how to use a function unless you know what type each thing is that you're providing it. So we make sure that we give you that type information directly here in the help. 
 
+最初の疑問は、`untar_data` がどのような働きをするのかをどうやって知ればいいのかということでしょう。helpと入力すればそれがどのモジュールから来たのか（`import *`をしたので、必ずしもあなたはそれがどこから来たものか知っている必要はない）、そしてそれが何をするのか、仮にあなたが経験豊富なプログラマーであっても知らないものを渡すかもしれない。おそらくあなたはurl,frame,destといった名称を見たことがあるでしょうが、`Union[pathlib.Path, str]`という表記は見慣れないかもしれません。これらの形式は型付きプログラミング言語を経験したことがあるなら見慣れているでしょうか、Pythonプログラマーにとっては見慣れないものでしょう。しかしこれについて考えたとき、実際にはあなたが使うとしているものがどんな型であるかを知らない限り使い方はわからないでしょう。そこで、ここではhelpで直接その型についての情報を提供しています。
+
 In this case, `url` is a string, `fname` is either path or a string and defaults to nothing (`Union` means "either"). `dest` is either a string or a path and defaults to nothing. 
+
+このケースでは、`url`は文字列、`fname`はパスまたは文字列で、標準では不要（`Union`の意味は”どちらでも”）、`dest`は文字列またはパスで標準では不要なものです。
 
 ```python
 help(untar_data)
@@ -265,6 +273,8 @@ untar_data(url:str, fname:Union[pathlib.Path, str]=None, dest:Union[pathlib.Path
 ```
 
 We'll learn more shortly about how to get more documentation about the details of this, but for now, we can see we don't have to pass in a file name `fname` or a destination `dest`, it'll figure them out for us from the URL. 
+
+このドキュメントの詳細は後ほど学びますが、今のところ`fname` と`dest`は必ずしも渡す必要はないこと、URLが必要なことがわかります。
 
 For all the datasets we'll be using in the course, we already have constants defined for all of them. So in this [URLs](https://github.com/fastai/fastai/blob/master/fastai/datasets.py) class, you can see where it's going to grab it from.
 
