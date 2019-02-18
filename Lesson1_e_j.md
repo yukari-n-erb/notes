@@ -278,7 +278,11 @@ We'll learn more shortly about how to get more documentation about the details o
 
 For all the datasets we'll be using in the course, we already have constants defined for all of them. So in this [URLs](https://github.com/fastai/fastai/blob/master/fastai/datasets.py) class, you can see where it's going to grab it from.
 
+この講義で使用する予定のデータセットには既に定義済みの値があります。このURLのクラスからは、その値がどこからきたものかがわかります。
+
 `untar_data` will download that to some convenient path and untar it for us and it will then return the value of path. 
+
+`untar_data`は便利な場所にデータをダウンロードし、その場所のPATHを返します。
 
 ```python
 path = untar_data(URLs.PETS); path
@@ -288,11 +292,18 @@ PosixPath('/data1/jhoward/git/course-v3/nbs/dl1/data/oxford-iiit-pet')
 ```
 In Jupyter Notebook, you can just write a variable on its own (semicolon is just an end of statement in Python) and it prints it. You can also say `print(path)` but again, we are trying to do everything fast and interactively, so just write it and here is the path where it's given us our data. 
 
+Jupyter Notebookでは自分自身で変数を定義することができ（セミコロンはPython文の終わりを示しています）、そしてそれを表示できます。
+ `print(path)` と書くこともできますが、繰り返しますが私達はすべてをすばやくインタラクティブに行いたいので、変数を書くだけでそのデータを表示します。
+
 Next time you run this, since you've already downloaded it, it won't download it again. Since you've already untared it, it won't untar it again. So everything is designed to be pretty automatic and easy.
+
+これを次に実行したときには、それは既にダウンロードし終えているので、再びダウンロードｓる必要はありません。既に解凍済みなので再び解凍する必要もありません。すべてが自動的かつ簡単にできるように設計されています。
 
 [[23:50](https://youtu.be/BWWm4AzsdLk?t=1430)]
 
 There are some things in Python that are less convenient for interactive use than they should be. For example, when you do have a path object, seeing what's in it actually takes a lot more typing than I would like. So sometimes we add functionality into existing Python stuff. One of the things we do is add a `ls()` method to path.
+
+Pythonにはいくつか対話的に利用するには不向きな点があります。例えば、pathのオブジェクトがあったとき、その中になにがあるかを見るには私が望むよりさらに多くのタイピングが必要です。そのため、ときどき既存のPythonの機能に追加をします。その一つは、Pathにls()メソッドを追加することです。
 
 ```python
 path.ls()
@@ -303,6 +314,8 @@ path.ls()
 
 These are what's inside this path, so that's what we just downloaded. 
 
+これがこのPathの中に存在しているものです。先ほどダウンロードしたデータが格納されています。
+
 ### Python 3 pathlib [[24:25](https://youtu.be/BWWm4AzsdLk?t=1465)]
 
 ```python
@@ -312,13 +325,19 @@ path_img = path/'images'
 
 If you are an experienced Python programmer, you may not be familiar with this approach of using a slash like this. This is a really convenient function that's part of Python 3. It's functionality from [pathlib](https://docs.python.org/3/library/pathlib.html). Path object is much better to use than strings. They let you use basically create sub paths like this. It doesn't matter if you're on Windows, Linux, or Mac. It is always going to work exactly the same way. `path_img` is the path to the images in that dataset.
 
+あなたがPythonプログラマーとしての経験があったとしても、このようにスラッシュを使った記法は知らないでしょう。これは本当にPython3における便利な機能です。この機能はpathlibから来ています。Pathオブジェクトは文字列よりも遥かに使いやすいです。これらはあなたが基本的なサブバスをこのように作ることができます。Windows,Linux,Macでもかまいません。これらは同じように動くでしょう。`path_img` は画像のデータセットへのパスです。
+
 [[24:57](https://youtu.be/BWWm4AzsdLk?t=1497)]
 
 So if you are starting with a brand new dataset trying to do some deep learning on it. What do you do? Well, the first thing you would want to do is probably see what's in there. So we found that `annotations` and `images` are the directories in there, so what's in this images? 
 
+そしてこの新しいデータセットでディープラーニングの学習を始めるにはどうしたらいいと思いますか？まずは、最初にすることはおそらく画像の中身を見ることでしょう。 `annotations` と `images` のフォルダがあることはわかりました。この画像はいったいなんでしょうか？
+
 ### get_image_files [[25:15](https://youtu.be/BWWm4AzsdLk?t=1515)]
 
 get_image_files will just grab an array of all of the image files based on extension in a path. 
+
+get_image_filesはパス内の拡張子に基づいて画像ファイルの配列を返すだけです。
 
 ```python
 fnames = get_image_files(path_img)
@@ -335,6 +354,11 @@ fnames[:5]
  This is a pretty common way for computer vision datasets to get passed around - just one folder with a whole bunch of files in it. So the interesting bit then is how do we get the labels. In machine learning, the labels refer to the thing we are trying to predict. If we just eyeball this, we could immediately see that the labels are actually part of the file names. It's kind of like `path/label_number.extension`. We need to somehow get a list of `label` bits of each file name, and that will give us our labels. Because that's all you need to build a deep learning model:
  - Pictures (files containing the images)
  - Labels
+ 
+ これはコンピュータビジョンにおけるデータセットのパスを得るための非常に一般的な方法です。 - 一つのフォルダの中にあるたくさんのファイルを渡すための。これの興味深い点はラベルを得るための方法です。機械学習では、ラベルとは我々が予測したいことを指します。しかし実際に見てみると、これはラベルがファイルパスの一部となっていることがわかります。`path/label_number.extension` といったように。私達はこのラベルの列をファイル名から取得し我々のラベルとする必要があるのでしょう。ディープラーニングのモデル作成に必要なのは次のものだけです：
+  - 写真 (画像を含むファイル)
+  - ラベル
+ 
 
 In fastai, this is made really easy. There is an object called `ImageDataBunch`. An ImageDataBunch represents all of the data you need to build a model and there's some factory method which try to make it really easy for you to create that data bunch - a training set, a validation set with images and labels. 
 
