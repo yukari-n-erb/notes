@@ -429,7 +429,7 @@ This is what we are going to learn about shortly. Basically this thing called tr
 ### data.show_batch
 Let's take a look at a few pictures. Here are a few pictures of things from my data bunch. So you can see data.show_batch can be used to show me some of the contents in my data bunch. So you can see roughly what's happened is that they all seem to have being zoomed and cropped in a reasonably nice way. So basically what it'll do is something called by default center cropping which means it'll grab the middle bit and it'll also resize it. We'll talk more about the detail of this because it turns out to actually be quite important, but basically a combination of cropping and resizing is used.
 
-いくつかの写真を見てみましょう。 これが私のデータ集からのもののいくつかの写真です。 それで、あなたはdata.show_batchが私のデータ束の中の内容のいくつかを私に示すために使われることができるのを見ることができます。 それで、あなたはだいたい起こっていることを見ることができるということはそれらがすべてかなり合理的な方法でズームされて、切り取られているように思われるということです。 だから基本的にはデフォルトのセンタークロッピングと呼ばれるもので、それはミドルビットをつかんでサイズ変更するということです。 実際には非常に重要であることが判明したため、この詳細について詳しく説明しますが、基本的にはトリミングとサイズ変更の組み合わせが使用されます。
+いくつかの写真を見てみましょう。 これが私のデータ集の中のいくつかの写真です。 あなたはdata.show_batchがデータ集のなかのいくつかのコンテンツを表示するために使われることがわかるでしょう。それらがかなり合理的にズームまたは切り取られているということがだいたいの写真で起こっていることが分かるでしょう。 これは基本的にはデフォルトのセンタークロッピングと呼ばれるもので、それは中央を中心にサイズ変更するということです。 これらについては実際には非常に重要であるので詳しく説明しますが、基本的にはトリミングとサイズ変更の組み合わせが使用されます。
 
 ```python
 data.show_batch(rows=3, figsize=(7,6))
@@ -438,24 +438,24 @@ data.show_batch(rows=3, figsize=(7,6))
 
 Something else we are going to learn about is we also use this to do something called data augmentation. So there's actually some randomization in how much and where it crops and stuff like that. 
 
+他に学ぶこととして、これを使ってデータ拡張と呼ばれることをすることです。これはいくつかランダムな大きさや場所で切り取りすることです。
+
 Basic the basic idea is some cropping, resizing, and padding. So there's all kinds of different ways it depends on data augmentation which we are going to learn about shortly. 
 
-他に学ぶことがあるのは、これを使ってデータ拡張と呼ばれることをすることです。 それで、実際にそれがどれだけ、どこでクロップし、そのようなものであるかにランダム化があります。
-
-基本基本的な考え方は、トリミング、サイズ変更、パディングです。 それで、私たちがまもなく学ぶつもりであるそれはデータ増大に依存するいろいろな種類の異なる方法があります。
+基本的な考え方は、トリミング、サイズ変更、パディングです。データ拡張に関する様々な手法については近々学びます。
 
 [[31:51](https://youtu.be/BWWm4AzsdLk?t=1911)]
 
 **Question**: What does it mean to normalize the images? 
+画像を正規化するとはどういう意味ですか？
 
-**質問**：画像を正規化するとはどういう意味ですか？
+Normalizing the images, we're going to be learning more about later in the course, but in short, it means that the pixel values start out from naught to 255. And some channels might tend to be really bright, some might tend to be really not bright at all, some might vary a lot, and some might not very much at all. It really helps train a deep learning model if each one of those red green and blue channels has a mean of zero and a standard deviation of one. 赤、緑、青の各チャンネルの平均が0で標準偏差が1の場合であれば、ディープラーニングモデルの訓練に非常に役立ちます。
 
-Normalizing the images, we're going to be learning more about later in the course, but in short, it means that the pixel values start out from naught to 255. And some channels might tend to be really bright, some might tend to be really not bright at all, some might vary a lot, and some might not very much at all. It really helps train a deep learning model if each one of those red green and blue channels has a mean of zero and a standard deviation of one. 
+画像の正規化についてはコースの後半で学びますが、それはつまりピクセル値が0から255であるということです。いくつかのチャンネルは明るくなるかもしれませんし全く明るくならないかもしれませんし、あるものは大きく変わるかもしれませんし全く変わらないかもしれません。
 
 If your data is not normalized, it can be quite difficult for your model to train well. So if you have trouble training a model, one thing to check is that you've normalized it.
 
-画像を正規化していくうちに、コースの後半で詳細を学びますが、要するに、ピクセル値が不明から255まで始まることを意味します。 実際にはまったく明るくはありません。いくつかは大きく異なる可能性があり、いくつかはまったくまったく意味がない可能性があります。 それらの赤、緑、青の各チャンネルの平均が0で標準偏差が1の場合、それは実際に深い学習モデルを訓練するのに役立ちます。
-
+もしあなたのデータが正規化されていなければ、あなたのモデルを上手に訓練するのは少し難しいかもしれません、もしあなたがモデルの訓練に問題を抱えていたら、一度正規化についてチェックするといいでしょう。
 
 [[33:00](https://youtu.be/BWWm4AzsdLk?t=1980)]
 **Question**: As GPU mem will be in power of 2, doesn't size 256 sound more practical considering GPU utilization compared to 224?
