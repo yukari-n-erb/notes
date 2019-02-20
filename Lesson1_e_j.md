@@ -362,9 +362,15 @@ fnames[:5]
 
 In fastai, this is made really easy. There is an object called `ImageDataBunch`. An ImageDataBunch represents all of the data you need to build a model and there's some factory method which try to make it really easy for you to create that data bunch - a training set, a validation set with images and labels. 
 
+fastaiでは、これは非常に簡単です。これは`ImageDataBunch`（画像データ集）と呼ばれます。画像データ集はあなたのモデル作成に必要なものをすべて含んでおり、データ集を簡単に作るためのいくつかの工場のような手段 - 訓練セット、評価セット、イメージラベル - があります。
+
 In this case, we need to extract the labels from the names. We are going to use `from_name_re`. `re` is the module in Python that does regular expressions - things that's really useful for extracting text. 
 
+このケースでは、ファイルネームからラベルを展開する必要があります。`from_name_re`を利用します。`re`はPythonの正規表現を使えるようにするモジュールで - これは文字列を展開するのに本当に便利なのです。
+
 Here is the regular expression that extract the label for this dataset:
+
+ここではこのデータセットから正規表現でラベルを展開してみましょう。
 
 ```python
 np.random.seed(2)
@@ -372,16 +378,25 @@ pat = r'/([^/]+)_\d+.jpg$'
 ```
 With this factory method, we can basically say:
 
+この手法では私達はいつも下記のように言っています。
+
 - path_img: a path containing images
 - fnames: a list of file names
 - pat: a regular expression (i.e. pattern) to be used to extract the label from the file name
 - ds_tfm: we'll talk about transforms later
 - size: what size images do you want to work with.
   
+  
+- path_img: 画像を含むパス
+- fnames: ファイル名のリスト
+- pat: ファイル名からラベルを展開するために利用する基本的な正規表現（例）
+- ds_tfm: 展開については後ほど説明します。
+- size: どんなサイズの画像を使用したいか
 
 This might seem weird because images have size. This is a shortcoming of current deep learning technology which is that a GPU has to apply the exact same instruction to a whole bunch of things at the same time in order to be fast. If the images are different shapes and sizes, you can't do that. So we actually have to make all of the images the same shape and size. In part 1 of the course, we are always going to be making images square shapes. Part 2, we will learn how to use rectangles as well. It turns out to be surprisingly nuanced. But pretty much everybody in pretty much all computer vision modeling nearly all of it uses this approach of square. 224 by 224, for reasons we'll learn about, is an extremely common size that most models tend to use so if you just use size=224, you're probably going to get pretty good results most of the time. This is kind of the little bits of artisanship that I want to teach you which is what generally just works. So if you just use size 224, that'll generally just work for most things most of the time.
 
 
+画像にサイズという項目があるのは不自然に見えるかもしれません。これは現在のディープラーニング技術の欠点のせいで、高速な処理のためにはGPUが同じ命令を同時に実行できるようにする必要があるからです。もし画像の形や大きさが違っていたらそれができないのです。そのため、実際にはすべての画像の形とサイズを同じにする必要があります。このPart1のコースでは、いつも画像の形は正方形にします。Part2では長方形の処理の仕方も学びます。驚くほど奇妙な違いがあることがわかるでしょう。しかしほとんどのコンピュータビジョンモデリングを行う人々は224×224の正方形を利用しています、その理由はほとんどのモデルが使う傾向のある224のサイズを採用しているからで、そうすることえあなたも多くの場合においていい結果が得られるでしょう。これはあなたに教えておきたい、一般的に上手くいくためのコツのようなものです。もしあなたが224のサイズを使うなら、それはほとんどの場合で上手く行く結果が得られるでしょう。
 
 ```python
 data = ImageDataBunch.from_name_re(path_img, fnames, pat, ds_tfms=get_transforms(), size=224)
@@ -392,15 +407,23 @@ data.normalize(imagenet_stats)
 
 `ImageDataBunch.from_name_re` is going to return a DataBunch object. In fastai, everything you model with is going to be a DataBunch object. Basically DataBunch object contains 2 or 3 datasets - it contains your training data, validation data, and optionally test data. For each of those, it contains your images and your labels, your texts and your labels, or your tabular data and your labels, or so forth. And that all sits there in this one place(i.e. `data`). 
 
+`ImageDataBunch.from_name_re`はデータ集合のオブジェクトを返します。fastaiでは、すべてのモデルはデータ集合オブジェクトになります。基本的にデータ集合オブジェクトは2個から3個のデータセットを持ちます - それは訓練データ、評価データ、そしてオプションのテストデータです。それぞれのデータセットには画像とラベル、テキストとラベル、表データとラベルといったものが含まれています。そしてその全てがこの一箇所にあるのです。（例えば `data`)）
+
 Something we will learn more about in a little bit is normalization. But generally in nearly all machine learning tasks, you have to make all of your data about the same "size" - they are specifically about the same mean and standard deviation.  So there is a normalize function that we can use to normalize our data bunch in that way.
 
+ここで正規化についてもう少し詳しく説明します。しかし一般的なほとんどすべての機械学習タスクにおいて、あなたは同じサイズのデータを作らねばなりません - それらは同じ平均と標準偏差のことです。そのため、データを正規化するために使える正規化関数について説明します。
 
+`ImageDataBunch.from_name_re`
 
 [[30:25](https://youtu.be/BWWm4AzsdLk?t=1825)]
 
 Question: What does the function do if the image size is not 224? 
 
+質問:もし画像サイズが224でないときに実行するとこの関数は何をしますか？
+
 This is what we are going to learn about shortly. Basically this thing called transforms is used to do a number of the things and one of the things it does is to make something size 224. 
+
+これをこのあと学びます。基本的には変換と呼ばれる処理は様々なことをしていますが、その一つがサイズを224にすることです。
 
 
 ### data.show_batch
