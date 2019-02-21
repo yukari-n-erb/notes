@@ -503,13 +503,13 @@ len(data.classes),data.c
 
  Believe it or not, we are now ready to train a model. A model is trained in fastai using something called a "learner". 
 
-信じられないかもしれませんが、これでモデルを訓練する準備が整いました。 fasraiではモデルは「Leaner」と呼ばれるものを使って訓練されます。
+信じられないかもしれませんが、これでモデルを訓練する準備が整いました。 fasraiではモデルは「学習器」と呼ばれるものを使って訓練されます。
 
  - **DataBunch**: A general fastai concept for your data, and from there, there are subclasses for particular applications like ImageDataBunch
  fastaiにおける一般的なデータの概念では、ImageDataBunchのような特別なアプリケーションのためのサブクラスがあります
  
  - **Learner**: A general concept for things that can learn to fit a model. From that, there are various subclasses to make things easier in particular, there is a convnet learner  (something that will create a convolutional neural network for you).
-モデルに適合するように訓練するための一般的な概念。 そこれには特に物事を簡単にするためのさまざまなサブクラスがあり、それはconvnet leaner（畳み込みニューラルネットワークを作成するもの）です。
+モデルに適合するように訓練するための一般的な概念。 そこれには特に物事を簡単にするためのさまざまなサブクラスがあり、それは畳み込み学習器（畳み込みニューラルネットワークを作成するもの）です。
 
 ```python
 learn = create_cnn(data, models.resnet34, metrics=error_rate)
@@ -529,7 +529,7 @@ For now, the most important thing for you to know is that there's a particular k
 
 That is all the information we need to create a convolutional neural network learner. 
 
-これが畳み込みニューラルネットワークLearnerを作成するために必要なすべての情報です。
+これが畳み込みニューラルネットワーク学習器を作成するために必要なすべての情報です。
 
 There is one other thing I'm going to give it though which is a list of metrics. Metrics are literally just things that gets printed out as it's training. So I'm saying I would like you to print out error rate. 
 
@@ -541,28 +541,30 @@ There is one other thing I'm going to give it though which is a list of metrics.
 
 The first time I run this on a newly installed box, it downloads the ResNet34 pre-trained weights. What that means is that this particular model has actually already been trained for a particular task. And that particular task is that it was trained on looking at about one and a half million pictures of all kinds of different things, a thousand categories of things, using an image dataset called ImageNet. So we can download those pre-trained weights so that we don't start with a model that knows nothing about anything, but we actually start with a model that knows how to recognize a thousand categories of things in ImageNet. I don't think all of these 37 categories of pet are in ImageNet but there were certainly some kinds of dog and some kinds of cat. So this pre-trained model knows quite a little bit about what pets look like, and it certainly knows quite a lot about what animals look like and what photos look like. So the idea is that we don't start with a model that knows nothing at all, but we start by downloading a model that knows something about recognizing images already. So it downloads for us automatically, the first time we use it, a pre-trained model and then from now on, it won't need to download it again - it'll just use the one we've got. 
 
-私が新しく設置した箱で初めてこれを走らせるとき、それはResNet34事前訓練された重みをダウンロードする。それが意味することは、この特定のモデルが実際にすでに特定のタスクのために訓練されたということです。そしてその特別な仕事は、ImageNetと呼ばれる画像データセットを使用して、あらゆる種類のもの、千種類のものの約150万枚の写真を見ることについて訓練されたことです。だから私たちは何も知らないモデルから始めないようにこれらの事前に訓練された重みをダウンロードすることができますが、実際には私たちはImageNetで1000種類のものを認識する方法を知っているモデルから始めます。私はこれら37種類のペットのすべてがImageNetにあるとは思いませんが、確かにある種の犬とある種の猫がいました。それで、この事前に訓練されたモデルはペットがどのように見えるかについてかなり多くを知っています、そしてそれは確かに動物がどのように見えるかそして写真がどのように見えるかについてかなり多くを知っています。つまり、まったく何も知らないモデルから始めるのではなく、既に画像を認識することについて何か知っているモデルをダウンロードすることから始めます。そのため、最初に使用するときは事前にトレーニングされたモデルが自動的にダウンロードされ、それ以降は再度ダウンロードする必要はありません - 入手したものだけを使用します。
+新しい環境で初めてこれを実行するとき、これはResNet34の事前訓練済みの重みをダウンロードします。これの意味は、この特定のモデルが実際にすでに特定のタスクに対して訓練されているということです。この特定のタスクとは、ImageNetと呼ばれる画像データセットを使用して、様々な千種類・約150万枚の写真も用いて訓練されたことです。だから私たちは何も訓練されていないモデルから開始しないように事前訓練済みの重みをダウンロードすることができますが、しかし実際にはImageNetによって1000種類の物体を認識できるモデルから始めることになるのです。今回37種類のペットのすべてがImageNetにあるわけではないでしょうが、ある種の犬猫はいました。だからこの事前訓練されたモデルは、写真上でペットや動物がどのように見えるのかについてかなり多くのことをしっています。つまり、まったく何も知らないモデルから始めるのではなく、既に画像認識について何らかのことを知っているモデルをダウンロードすることから始めるのです。そのため、初回のみ事前訓練済みのモデルが自動的にダウンロードされ、それ以降は再びダウンロードすることはありません、入手済みのものだけを使用します。
 
 ## Transfer learning [[38:54](https://youtu.be/BWWm4AzsdLk?t=2334)]
+転移学習
 
 This is really important. We are going to learn a lot about this. It's kind of the focus of the whole course which is how to do this thing called "transfer learning." How to take a model that already knows how to do something pretty well and make it so that it can do your thing really well. We will take a pre-trained model, and then we fit it so that instead of predicting a thousand categories of ImageNet with ImageNet data, it predicts the 37 categories of pets using your pet data. By doing this, you can train models in 1/100 or less of the time of regular model training with 1/100 or less of the data of regular model training. Potentially, many thousands of times less. Remember I showed you the slide of Nikhil's lesson 1 project from last year? He used 30 images. There are not cricket and baseball images in ImageNet but it turns out that ImageNet is already so good at recognizing things in the world that just 30 examples of people playing baseball and cricket was enough to build a nearly perfect classifier. 
 
-これは本当に重要です。私達はこれについて多くを学ぶつもりです。それは「トランスファーラーニング」と呼ばれるこのことをどのように行うかということで、コース全体の焦点のようなものです。あなたが自分のことを本当にうまくやることができるように、何かをうまくやる方法を既に知っているモデルをどうやって作るか。私たちは事前に訓練されたモデルを採用します、そしてそれから私達はそれがあなたのペットデータを使ってペットの37のカテゴリーを予測する代わりにImageNetの1000のカテゴリーを予測する代わりにそれを当てはめます。こうすることで、通常のモデル訓練の1/100以下のデータで、通常のモデル訓練の1/100以下の時間でモデルを訓練することができます。潜在的に、何千倍も少ない。去年からのNikhilのレッスン1プロジェクトのスライドを見せたのを覚えてる？彼は30枚の画像を使いました。 ImageNetにはクリケットと野球の画像はありませんが、ImageNetはすでに世界のものを認識するのに非常に優れているので、野球とクリケットをしている人々の30例だけでほぼ完璧な分類器を作成できます。
+これは重要なことです。これについて多くを学習するでしょう。コース全体の焦点は「転移学習」と呼ばれる手法をどのように行うかにあります。なにかを上手くやる方法を知っているモデルをどうやって作るのか、あなたが自分のことを上手くやるように。私達は事前訓練済みのモデルを使い、ImageNetデータを千種類のカテゴリに当てはめるように、あなたのペットデータを使って37種類のカテゴリを予測します。こうすることで、通常のモデル訓練の1/100以下のデータで、通常のモデル訓練の1/100以下の時間でモデルを訓練することができます。何千倍もの時間の差がある。去年のレッスン1のNikhilのプロジェクトのスライドを覚えていますか？彼は30枚の画像を利用しました。 ImageNetにはクリケットと野球の画像はありませんでしたが、ImageNetはすでに世界のものに対して非常に優れた認識力があるので、野球とクリケットをしている人たちの30個の例だけでほぼ完璧な識別器を作成できます。
 
 ## Overfitting [[40:05](https://youtu.be/BWWm4AzsdLk?t=2405)]
-
+過学習
 Wait a minute, how do you know it can actually recognize pictures of people playing cricket versus baseball in general? Maybe it just learnt to recognize those 30. Maybe it's just cheating. That's called "overfitting". We'll be talking a lot about that during this course. But overfitting is where you don't learn to recognize pictures of say cricket versus baseball, but just these particular cricketers in these particular photos and these particular baseball players in these particular photos. We have to make sure that we don't overfit. The way to do that is using something called a validation set. A validation set is a set of images that your model does not get to look at. So these metrics (e.g. error_rate) get printed out automatically using the validation set - a set of images that our model never got to see.  When we created our data bunch, it automatically created a validation set for us. We'll learn lots of ways of creating and using validation sets, but because we're trying to bake in all of the best practices, we actually make it nearly impossible for you not to use a validation set. Because if you're not using a validation set, you don't know if you're overfitting. So we always print out the metrics on a validation, we've always hold it out, we always make sure that the model doesn't touch it. That's all done for you, and all built into this data bunch object.
 
-ちょっと待って、それが実際にクリケット対野球一般をしている人々の写真を実際に認識することができることをどのように知っていますか？たぶんそれはそれらの30を認識することを学んだだけなのかもしれない。それは「過剰装備」と呼ばれます。私達はこのコースの間にそれについてたくさん話しているでしょう。しかし、オーバーフィットは、クリケット対野球の写真を認識することを学ぶのではなく、これらの特定の写真の中のこれらの特定のクリケット選手、およびこれらの特定の写真の中のこれらの特定の野球選手を認識することを学ぶ場所です。やり過ぎないようにする必要があります。その方法は検証セットと呼ばれるものを使うことです。検証セットは、モデルが見ることのできない画像のセットです。そのため、これらのメトリクス（error_rateなど）は、検証セット（モデルでは見ることができなかった一連の画像）を使用して自動的に印刷されます。データセットを作成すると、自動的に検証セットが作
+ちょっと待ってください、それが実際に一般的にクリケットや野球をしている人々の写真を認識できているとどうやって知るのですか？もしかしたらそれはその３０枚の画像を認識することのみを学んだだけなのかもしれない。それはずるい。これを「過学習」と呼びます。これについてはコースの中でたくさん話すことになるでしょう。しかし過学習は、クリケットと野球の写真を認識することを学ぶのではなく、写真の中から特定のクリケット選手の野球選手を学んでしまいます。過学習しないようにする必要があります。それは評価セットと呼ばれるものを使うことです。評価セットとは、モデルが見ることのできない画像のセットです。そのため、これらのメトリクス（エラー率など）は、検証セット - モデルが見ることができない一連の画像を使用して自動的に表示されます。データ集合を作成するとき、自動的に検証セットも作成されます。たくさんの検証セットの作成・使用方法について学んでいきますが、しかしベストプラクティスに従うため、検証セットを使用せずにいようとすることはほぼ不可能でしょう。なぜならもし検証セットを使わないのならば、あなたが過学習を知ることはできないからです。私達はいつも検証結果の測定値を表示し、私達がそれを行うためにいつもモデルにはそれに触れないようにします。これですべて完了しました、作成済みのものはすべてデータオブジェクトに組み込まれました。
 
 ## Fitting your model [[41:40](https://youtu.be/BWWm4AzsdLk?t=2500)]
+モデルへの適合
 So now we have a ConvLearner, we can fit it. You can just use a method called `fit` but in practice, you should nearly always use a method called `fit_one_cycle`. In short, one cycle learning is [a paper](https://arxiv.org/pdf/1803.09820.pdf) that was released in April and turned out to be dramatically better both more accurate and faster than any previous approach. Again, I don't want to teach you how to do 2017 deep learning. In 2018, the best way to fit models is to use something called one cycle. 
 
-これで、ConvLearnerが完成しました。 `fit`と呼ばれるメソッドを使うことができますが、実際には、ほとんど常に` fit_one_cycle`と呼ばれるメソッドを使うべきです。 一言で言えば、1サイクル学習は4月にリリースされた[a paper]（https://arxiv.org/pdf/1803.09820.pdf）であり、以前のどのアプローチよりも劇的に正確かつ高速であることが判明しました。 繰り返しますが、2017年のディープラーニングの方法をあなたに教えたくはありません。 2018年に、モデルに合う最も良い方法は1サイクルと呼ばれるものを使うことです。
+これで畳み込み学習器が完成です。`fit`と呼ばれるメソッドを使うことができますが、実際にはほぼ常に` fit_one_cycle`と呼ばれるメソッドを使ってください。 簡単に言うと、1サイクル学習は（2018年)4月にリリースされた[論文]（https://arxiv.org/pdf/1803.09820.pdf） であり、過去どの手法よりも劇的に正確かつ高速であることが判明しました。 繰り返しますが、2017年のディープラーニングの方法をあなたに教えたくはありません。 2018年では、モデルに適合させる最も良い手法は1サイクルと呼ばれるものを使うことです。
 
 For now, just know that this number, 4, basically decides how many times do we go through the entire dataset, how many times do we show the dataset to the model so that it can learn from it. Each time it sees a picture, it's going to get a little bit better. But it's going to take time and it means it could overfit. If it sees the same picture too many times, it will just learn to recognize that picture, not pets in general. We'll learn all about how to tune this number during the next couple of lessons but starting out with 4 is a pretty good start just to see how it goes and you can actually see after four epochs or four cycles, we got an error rate of 6%. And it took 1 minute and 56 seconds. 
 
-今のところ、この4という数字は、基本的に、データセット全体を何回通過するか、データセットをモデルに表示する回数を決定して、そこから学習できるようにするかを決定します。 写真を見るたびに、少し良くなります。 しかし、それは時間がかかるつもりであり、それはそれがやり過ぎることを意味します。 同じ写真を何度も見すぎると、一般的にペットではなく、その写真を認識するようになります。 次の2、3のレッスンでこの数字を調整する方法についてすべてを学びますが、4から始めることは、それがどのように行われるかを見るためのかなり良いスタートです。4エポックまたは4サイクル後に実際に確認できます。 6％の。 そして1分56秒かかりました。
+今のところ、この4という数字は基本的に、データセット全体を何回学習するか、データセットをモデルにモデルに何回見せて学習できるようにするかを決定します。 画像を見るたびに、少しずつ結果は良くなります。 しかし、それは時間がかかるし過学習する可能性があることを意味します。 同じ画像を何度も見すぎると、一般的にはペットではなくその画像そのものを認識するようになります。次回、次次回の講義でこの数を調整する方法を学びますが、ひとまず4から始めることは、4エポックまたは4サイクル後にそれがどうなるかを確認するための良いスタートです。エラー率は6％で、1分56秒かかりました。
 
 ```python
 learn.fit_one_cycle(4)
@@ -578,12 +580,12 @@ epoch  train loss  valid loss  error_rate
 ```
 So 94% of the time, we correctly picked the exact right one of those 37 dog and cat breeds which feels pretty good to me. But to get a sense of how good it is, maybe we should go back and look at the paper. Remember, I said the nice thing about using academic papers or Kaggle dataset is we can compare our solution to whatever the best people in Kaggle did or in the academics did. This particular dataset of pet breeds is from 2012 and if I scroll through the paper, you'll generally find in any academic paper there'll be a section called experiments about 2/3 of the way through. If you find a section on experiments, then you can find a section on accuracy and they've got lots of different models and their models. The models as you'll read about in the paper, it's really pet specific. They learn something about how pet heads look and how pet bodies look, and pet image in general look. And they combine them all together and once they use all of this complex code and math, they got an accuracy of 59%. So in 2012, this highly pet specific analysis got an accuracy of 59%. These were the top researchers from Oxford University. Today in 2018, with basically about three lines of code, we got 94% (i.e. 6% error). So that gives you a sense of how far we've come with deep learning, and particularly with PyTorch and fastai, how easy things are.
 
-そのため、94％の時間で、37種類の犬と猫の犬種のうち、私にとってかなり良いもののうち、正しいものを正しく選びました。しかし、それがどれほど優れているかを理解するためには、たぶん戻ってその論文を見るべきです。覚えておいてください、私は学術論文やKaggleデータセットを使用することのいいところは、Kaggleの優秀な人や学者の間で行ったことと比較できるということです。このペットの品種に関する特定のデータセットは2012年からのものです。この論文をスクロールすると、一般的にどの学術論文にも2/3程度の実験というセクションがあります。実験に関するセクションを見つけた場合は、精度に関するセクションを見つけることができ、それらにはさまざまなモデルとそのモデルが多数あります。本稿でお読みになるモデルは、ペット特有のものです。彼らはペットの頭の見え方やペットの体の見え方、そしてペットのイメージの概観について何かを学びます。そして、それらをすべて組み合わせて、この複雑なコードと数学をすべて使用すると、59％の精度が得られます。それで、2012年に、この非常にペット特有の分析は59％の正確さを得ました。これらはオックスフォード大学のトップ研究者でした。今日2018年に、基本的に約3行のコードで、私たちは94％（すなわち6％のエラー）を得ました。それで、私たちがどれほど深く学習してきたか、そして特にPyTorchとfastaiに関して、どれほど簡単であるかの感覚をあなたに与えます。
+94％の割合で37種類の犬と猫のを正しく分類できたので、これは一見良い結果のように感じられます。しかしそれがどれほど優れているかを把握するためには、おそらく論文に戻って見るべきでしょう。覚えておいてください、私は学術論文やKaggleデータセットを使用することの利点として、Kaggleの優秀な人や学者の間で行われたことと比較できることだと言いました。このペットの品種に関するデータセットは2012年からのものです。この論文を確認すると、一般的にどの学術論文にも2/3程度を実験という章が締めています。実験に関する章がある場合には、精度に関する章も見つけることができ、それらにはさまざまなモデルと彼らのモデルがあります。あなたがその論文で読んでいるモデルはペット特有のものです。ペットの頭や体、一般的な見え方について学ばせています。そしてそれらをすべて組み合わせた複雑なコードで59％の精度だったのです。その結果2012年にはペット特有の識別手法で59％の精度に到達したのです。これらはオックスフォード大学のトップ研究者のものでした。今日の2018年には、基本的に約3行のコードで、私たちは94％の精度（すなわち6％のエラー率）を得ました。これによって私達はディープラーニングによってどこまで遠くまで来たのか、そして特にPyTorchとfastaiがどれほど簡単であるかの実感を与えてくれます。
 
 [[46:43](https://youtu.be/BWWm4AzsdLk?t=2803)]
 We just trained a model. We don't know exactly what that involved or how it happened but we do know that with 3 or 4 lines of code, we've built something which smashed the accuracy of the state-of-the-art of 2012. 6% error certainly sounds like pretty impressive for something that can recognize different dog breeds and cat breeds, but we don't really know why it work, but we will. That's okay.
 
-モデルを訓練したところです。 それが何を含んでいるのか、それがどのように起こったのか正確にはわかりませんが、3行または4行のコードで、2012年の最先端の精度を破るものを構築したことを知っています。 確かに異なる犬種と猫種を認識できるものにはかなり印象的に思えますが、それがなぜうまくいくのかはわかりませんが、そうするでしょう。 大丈夫。
+モデルを訓練しました。 これに何が含まれていてどんなことが起こったのかは正確にはわかりませんが、しかし3,4行のコードで2012年の最先端の精度を破るほどのものを構築できたことを知っています。6%のエラーというとたしかに異なる犬と猫の品種を認識できている印象を与えてくれますが、それがなぜ上手く行くのかはわかります。けれどあとでわかるようになります、大丈夫。
 
 ### The number one regret of past students:
 過去の学生の一番の後悔：
