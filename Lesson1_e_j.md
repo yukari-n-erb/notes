@@ -459,30 +459,29 @@ If your data is not normalized, it can be quite difficult for your model to trai
 
 [[33:00](https://youtu.be/BWWm4AzsdLk?t=1980)]
 **Question**: As GPU mem will be in power of 2, doesn't size 256 sound more practical considering GPU utilization compared to 224?
-
-**質問**：GPUメモリは2のべき乗になるので、GPUの使用率を考慮すると、256と比べて256サイズのサウンドの方が実用的ではないでしょうか。
+GPUのメモリ容量は2のべき乗になるので、224より256のほうがGPUの使用効率を考えると実用的なのではないでしょうか？
 
 The brief answer is that the models are designed so that the final layer is of size 7 by 7, so we actually want something where if you go 7 times 2 a bunch of times (224 = 7*2*2*2*2*2), then you end up with something that's a good size.
 
-簡単な答えは、最終的なレイヤーのサイズが7 x 7になるようにモデルが設計されているということです。ですから、実際には7回2回行った場合（224 = 7 * 2 * 2 * 2 * 2 *） 2）そして、あなたは良いサイズのものになってしまいます。
+簡単に答えると、これは最終的なレイヤーのサイズが7×7になるようにモデルが設計されているからで、実際には7×2を行った場合(224 = 7*2*2*2*2*2)、いいサイズのものが得られるようになっています。（※原文チェック）
 
 [[33:27](https://youtu.be/BWWm4AzsdLk?t=2007)]
 
 We will get to all these details but the key thing is I wanted to get to training a model as quickly as possible. 
 
-私たちはこれらすべての詳細に到達するでしょう、しかし重要なことは私ができるだけ早くモデルを訓練することになったかったです。
+これから詳細を知ることになるでしょうが、しかし大切なことは私はモデルの訓練をできるだけ早く訓練できるようになってほしいということです。
 
 ### It is important to look at the data
-
-データを見ることは重要です
+データを見ることは重要
 
 One of the most important thing to be a really good practitioner is to be able to look at your data. So it's really important to remember to go to `data.show_batch` and take a look. It's surprising how often when you actually look at the dataset you've been given that you realize it's got weird black borders on it, some of the things have text covering up some of it, or some of it is rotated in odd ways. So make sure you take a look.
 
-本当に優秀な実務家になるための最も重要なことの1つは、あなたのデータを見ることができるということです。 それで `data.show_batch`に行って見てみることを忘れないでください。 与えられたデータセットを実際に見ると、それが奇妙な黒い境界線になっていること、テキストの一部が隠れていること、または一部が奇妙な方法で回転していることに気付いていることがわかります。 だからあなたが見ていることを確認してください。
+本当に優秀な専門家になるために大切なことは、データを見ることができるようになることです。  `data.show_batch`で見ることを忘れないことはとても重要です。 データセットを実際に見るてみと、黒い境界線が入っていたり、テキストの一部が隠れていたり、または一部が奇妙に回転していることに気付きます。だから実際に見てみることはとても重要です。
+
 
 The other thing we want to do is to look at the labels. All of the possible label names are called your classes. With DataBunch, you can print out your `data.classes`.
 
-他にしたいことはラベルを見ることです。 可能なラベル名はすべてあなたのクラスと呼ばれます。 DataBunchを使えば、 `data.classes`を印刷することができます。
+他にしたいことはラベルを確認することです。ラベルとして利用可能な名前の全てはクラスと呼ばれます。 DataBunchを使えばあなたの`data.classes`を表示することができます。
 
 ```python
 print(data.classes)
@@ -497,19 +496,20 @@ len(data.classes),data.c
 
  That's all of the possible labels that we found by using that regular expression on the file names. We learnt earlier on at the top that there are 37 possible categories, so just checking `len(data.classes)`, it is indeed 37. DataBunch will always have a property called `c`. We will get to the technical detail later, but for now, you can kind of think of it as being the number of classes. For things like regression problems and multi-label classification, that's not exactly accurate, but it'll do for now. It is important to know that `data.c` is a really important piece of information that is something like, or at least for classification problems it is, the number of classes. 
 
-これが、ファイル名にその正規表現を使用して見つけたラベルのすべてです。 冒頭の冒頭で37のカテゴリーがありうることを学んだので、 `len（data.classes）`をチェックするだけで確かに37になります。DataBunchは常に `c`というプロパティを持ちます。 技術的な詳細については後で説明しますが、今のところ、それはクラスの数であると考えることができます。 回帰問題やマルチラベル分類などに関しては、これは正確ではありませんが、それは今のところ行います。 `data.c`は本当に重要な情報であることを知っておくことは重要です、あるいは少なくとも分類問題のためにそれはクラスの数です。
+これが、ファイル名から正規表現を使用して取得した利用可能なラベル名のすべてです。 授業のの冒頭で37のカテゴリーがあると説明しましたが `len（data.classes）`をチェックと確かに37個あります。DataBunchは常に `c`というプロパティがあります。 技術的な詳細については後で説明しますが、今のところ、それはクラスの数であると考えてください。 回帰問題やマルチラベル分類などに関してはそれは正確ではありませんが、今のところはそう考えてください。 `data.c`は本当に重要な情報です、少なくとも分類問題においてこれはクラスの数ですから。
 
  ## Training [[35:07](https://youtu.be/BWWm4AzsdLk?t=2107)]
+訓練
 
  Believe it or not, we are now ready to train a model. A model is trained in fastai using something called a "learner". 
 
-信じられないかもしれませんが、これでモデルをトレーニングする準備が整いました。 モデルは「学習者」と呼ばれるものを使ってfastaiで訓練されます。
+信じられないかもしれませんが、これでモデルを訓練する準備が整いました。 fasraiではモデルは「Leaner」と呼ばれるものを使って訓練されます。
 
  - **DataBunch**: A general fastai concept for your data, and from there, there are subclasses for particular applications like ImageDataBunch
- あなたのデータのための一般的なfastai概念、そしてそこから、ImageDataBunchのような特定のアプリケーションのためのサブクラスがあります
+ fastaiにおける一般的なデータの概念では、ImageDataBunchのような特別なアプリケーションのためのサブクラスがあります
  
  - **Learner**: A general concept for things that can learn to fit a model. From that, there are various subclasses to make things easier in particular, there is a convnet learner  (something that will create a convolutional neural network for you).
-モデルに合うように学ぶことができるもののための一般的な概念。 そこから、特に物事を簡単にするためのさまざまなサブクラスがあります、convnet学習者（あなたのための畳み込みニューラルネットワークを作成するもの）があります。
+モデルに適合するように訓練するための一般的な概念。 そこれには特に物事を簡単にするためのさまざまなサブクラスがあり、それはconvnet leaner（畳み込みニューラルネットワークを作成するもの）です。
 
 ```python
 learn = create_cnn(data, models.resnet34, metrics=error_rate)
@@ -519,21 +519,21 @@ For now, just know that to create a learner for a convolutional neural network, 
 `data`: What's your data. Not surprisingly, it takes a data bunch.
 `arch`: What's your architecture. There are lots of different ways of constructing a convolutional neural network. 
 
-今のところ、畳み込みニューラルネットワークの学習者を作成するには、次の2つのことを説明する必要があります。
-`data`：あなたのデータは何ですか。 当然のことながら、それはデータの束を取ります。
-`arch`：あなたのアーキテクチャは何ですか 畳み込みニューラルネットワークを構築する方法はたくさんあります。
+今のところ、畳み込みニューラルネットワークのLeanerを作成するには、次の2つを説明する必要があります。
+`data`：このデータは何か。 当然のことながら、これはデータの集合です。
+`arch`：このアーキテクチャはか。畳み込みニューラルネットワークを構築する方法はたくさんあります。
 
 For now, the most important thing for you to know is that there's a particular kind of model called ResNet which works extremely well nearly all the time. For a while, at least, you really only need to be doing choosing between two things which is what size ResNet do you want. There are ResNet34 and ResNet50. When we are getting started with something, I'll pick a smaller one because it'll train faster. That's as much as you need to know to be a pretty good practitioner about architecture for now which is that there are two variants of one architecture that work pretty well: ResNet34 and ResNet50. Start with a smaller one and see if it's good enough.
 
-今のところ、あなたが知るべき最も重要なことはResNetと呼ばれる特別な種類のモデルがあるということです。 しばらくの間、少なくとも、あなたは本当にResNetがどんなサイズを望んでいるかという2つのことの間で選択をしなければならないだけです。 ResNet34とResNet50があります。 私たちが何かを始めているとき、私はそれがより速く訓練するので小さいものを選びます。 それはあなたが今のところアーキテクチャーについてかなり良い実務家であるために知っておく必要があるのと同じくらいです。それは1つのアーキテクチャーの2つの変種があるということです：ResNet34とResNet50。 小さいものから始めて、それが十分であるかどうかを確認してください。
+今のところ、知っておくべき最も重要なことはResNetと呼ばれる特別な種類のモデルがあるということです。 しばらくの間、少なくとも、あなたはResNetの2つのサイズのどちらかを選択しなければいけないということです。 ResNet34とResNet50があります。 私たちが何かを開始するときは、私はより早く訓練ができる小さいほうを選択します。一つのアーキテクチャに２つの変種：ResNet34とResNet50があることを知っておくのは、いい専門家になるために必要です。小さいものから試してみて、それで十分かどうかを確認してください。
 
 That is all the information we need to create a convolutional neural network learner. 
 
-これが畳み込みニューラルネットワーク学習器を作成するために必要なすべての情報です。
+これが畳み込みニューラルネットワークLearnerを作成するために必要なすべての情報です。
 
 There is one other thing I'm going to give it though which is a list of metrics. Metrics are literally just things that gets printed out as it's training. So I'm saying I would like you to print out error rate. 
 
-私がそれに与えるつもりであるもう一つのことがあるけれどもそれは測定基準のリストです。 メトリクスは、文字通り、トレーニングとして印刷されるものです。 だから私はあなたがエラー率をプリントアウトしてほしいと言っています。
+もう一つ教えておきたいのがあります、それはメトリクスのリストです。メトリクスは文字通り訓練中のことを表示するものです。なので私はエラー率をプリントしてほしいと言っています。
 
 [[37:25](https://youtu.be/BWWm4AzsdLk?t=2245)]
 
