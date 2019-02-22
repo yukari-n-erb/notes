@@ -595,19 +595,16 @@ We just trained a model. We don't know exactly what that involved or how it happ
 
 
 > ### **So please run the code. Really run the code.** [[47:54](https://youtu.be/BWWm4AzsdLk?t=2874)]
-
-だからコードを実行してください。 本当にコードを実行してください。
-
+お願いだからコードは実行してください。本当に実行してください
 
 Your most important skills to practice are learning and understanding what goes in and what comes out. 
-
-あなたが実践すべき最も重要なスキルは、何が起きて何が出るかを学び理解することです。
+実践で最も大事なスキルは何が起きて何が出てくるのかを学び理解することです。
 
 ![](lesson1/103.png)
 
 Fastai library is pretty new, but it's getting an extraordinary amount of traction. It's making a lot of things a lot easier, but it's also making new things possible. So really understanding the fastai software is something which is going to take you a long way. And the best way to really understand the fastai software well is by using the [fastai documentation](http://docs.fast.ai/).
 
-Fastaiライブラリはかなり新しいものですが、驚くほどの勢いで伸びています。 それはたくさんのことをずっと簡単にしますが、それはまた新しいことを可能にします。 それで、本当にfastaiソフトウェアを理解することはあなたに長い道のりを行くことになるものです。 そして、fastaiソフトウェアを本当によく理解するための最善の方法は[fastaiドキュメント]（http://docs.fast.ai/）を使うことです。
+Fastaiライブラリはとても新しいものですが、驚くほどの勢いで成長しています。これによってたくさんのことが簡単になりますが、またそれにより新しいことが可能になります。真にfastaiライブラリを理解するには長い道のりを行くことになるでしょう。fastaiのソフトウェアを本当に深く理解するために最も適切な方法は[fastaiドキュメント]（http://docs.fast.ai/） を読むことです。
 
 ### Keras[ [49:25](https://youtu.be/BWWm4AzsdLk?t=2965)]
 
@@ -615,7 +612,7 @@ Fastaiライブラリはかなり新しいものですが、驚くほどの勢�
 
 So how does it compare? There's only one major other piece of software like fastai that tries to make deep learning easy to use and that's Keras. Keras is a really terrific piece of software, we actually used it for the previous courses until we switch to fastai. It runs on top of Tensorflow. It was the gold standard for making deep learning easy to use before. But life is much easier with fastai. So if you look at the last year's course exercise which is getting dogs vs. cats, fastai lets you get much more accurate (less than half the error on a validation set), training time is less than half the time, lines of code is about 1/6. The lines of code are more important than you might realize because those 31 lines of Keras code involved you making a lot of decisions, setting lots of parameters, doing lots of configuration. So that's all stuff where you have to know how to set those things to get best practice results. Or else, those 5 lines of code, any time we know what to do for you, we do it for you. Anytime we can pick a good default, we pick it for you. So hopefully you will find this a really useful library, not just for learning deep learning but for taking it a very long way.
 
-それでそれはどのように比較しますか？ fastaiのような深層学習を使いやすくしようとするソフトウェアは他に1つだけあります。それがKerasです。 Kerasは本当に素晴らしいソフトウェアであり、fastaiに切り替えるまでは以前のコースで実際に使用していました。それはTensorflowの上に走ります。これは、以前からディープラーニングを使いやすくするためのゴールドスタンダードでした。しかし、人生はfastaiの方がずっと簡単です。それで、犬と猫を対比した昨年のコース演習を見ると、fastaiはもっと正確になります（バリデーションセットのエラーの半分以下）、トレーニング時間は半分以下、コード行は約1/6。 31行のKerasコードでは、多くの決定を下し、多数のパラメータを設定し、多数の構成を実行する必要があるため、コード行はあなたが理解するよりも重要です。それで、ベストプラクティスの結果を得るためにそれらをどのように設定するかを知る必要があるのはこれだけです。それ以外の場合、これら5行のコードは、私たちがあなたのために何をすべきかを知っているときはいつでも、私たちはあなたのためにそれをします。良いデフォルトを選ぶことができるときはいつでも、あなたのためにそれを選びます。それで、あなたがこれが本当に役に立つライブラリであることを願うでしょう、深い学習を学ぶためだけでなくそれを非常に長い道のりのためにするために。
+これはどのような比較ですか？fastaiのようにディープラーニングを簡単に使えるようにしようとするソフトウェアは他に1つだけあります。それがKerasです。 Kerasはとても素晴らしいソフトウェアで、fastaiができるまでは以前のこのコースでも使用していました。これはTensorflow上で実行します。以前までディープラーニングを簡単に使うための王道の方法でした。しかし、人生はfastaiの方がずっと簡単です。犬対猫の昨年のコース演習では、fastaiはもっと正確でした（評価セットのエラー率は半分以下）、トレーニング時間は半分以下、コード行は約1/6。 31行のKerasコードでは、多くのことを決め、多数のパラメータを調整し、多数の設定する必要があるため、コード行数はあなたが考えるよりももっと重要なことです。そして、ベストな結果を得るために知る必要のある設定はこれだけです。それ以外のこの5行のコードは、私達はあなたのために何をすべきかいつでも知っているし、それを実行します。良いデフォルト設定が選べるときはいつでもあなたのためにそれを選択します。ディープラーニングのために長い道のりを歩む必要がないのよう、あなたが本当に便利なライブラリに出会えることを願います。
 
 
 [[50:53](https://youtu.be/BWWm4AzsdLk?t=3053)]
@@ -626,7 +623,7 @@ So how does it compare? There's only one major other piece of software like fast
 
 How far can you take it? All of the research that we do at fastai uses the library and an example of the research we did which was recently featured in Wired describes a new breakthrough in a natural language processing which people are calling the ImageNet moment which is basically we broke a new state-of-the-art result in text classification which OpenAI then built on top of our paper with more computing, more data to do different tasks to take it even further. This is an example of something we've done in the last 6 months in conjunction with my colleague Sebastian Ruder - an example of something that's being built in the fastai library and you are going to learn how to use this brand new model in three lessons time. You're actually going to get this exact result from this exact paper yourself.
 
-どのくらい遠くまでそれを取ることができますか？ fastaiで行っているすべての研究では、ライブラリを使用し、最近Wiredで取り上げた研究の例では、基本的に新しい状態を破ったImageNetの瞬間を人々が呼んでいる自然言語処理の新しいブレークスルーについて説明します。 最先端の技術により、テキスト分類が可能になり、OpenAIではさらに多くのコンピューティング、さらに多くのデータを使用してさらに分類を進めることができました。 これは私の同僚であるSebastian Ruderと一緒にここ6ヶ月間に行ったことの一例です -  fastaiライブラリに構築されていることの3つの例であなたはこの真新しいモデルの使い方を学ぶつもりです 時間。 あなたは実際にこの正確な論文からこの正確な結果を自分で得ることになるでしょう。
+どのくらい先にまで行けますか？fastaiで行っているすべての研究はこのライブラリを使用しており、例えば最近Wiredで取り上げられた研究では、ImageNetと呼ばれる自然言語処理で、OpenAIによる私達の論文よりはるかに多くのコンピュータ・データ・異なるタスクによるテキスト分類の記録を破るブレークスルーを起こしました。これは私の同僚であるSebastian Ruderと共に最近6ヶ月間で実施したことの例です -  fastaiライブラリにいくつか用意されｔものの中の一つの例を使い、これから三回の講義であなたはこの新しいモデルの使い方を学びます。この緻密な論文から緻密な結果を得ることができるでしょう。
 
 [[51:50](https://youtu.be/BWWm4AzsdLk?t=3110)]
 ![](lesson1/107.png)
