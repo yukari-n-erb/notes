@@ -629,32 +629,32 @@ How far can you take it? All of the research that we do at fastai uses the libra
 ![](lesson1/107.png)
 Another example, one of our alumni, Hamel Husain built a new system for natural language semantic code search, you can find it on Github where you can actually type in English sentences and find snippets of code that do the thing you asked for. Again, it's being built with the fastai library using the techniques you'll learn in the next seven weeks.
 
-別の例として、私たちの卒業生の一人であるHamel Husainが、自然言語の意味コード検索のための新しいシステムを構築しました。Githubでそれを見つけることができます。 繰り返しますが、今後7週間以内に習得する手法を使って、fastaiライブラリを使用して構築されています。
+別の例では、卒業生の一人であるHamel Husainが新しい自然言語意味コード検索システムを構築しました。Githubで公開されています。 繰り返しますが、これから７週間の講義で習得する手法を使った、fastaiライブラリを利用して構築されています。
 
 
 [[52:27](https://youtu.be/BWWm4AzsdLk?t=3147)]
 
 The best place to learn about these things and get involved in these things is on the forums where as well as categories for each part of the course and there is also a general category for deep learning where people talk about research papers applications. 
 
-これらのことについて学び、これらのことに参加するのに最適な場所は、コースの各部分のカテゴリーだけでなくフォーラムでもあります。また、人々が研究論文の応用について話す一般的なカテゴリーもあります。
+講義について学び参加するのに最適な場所はフォーラムです、各コースのカテゴリーだけでなく一般的なディープラーニングの研究論文の応用について話す場所もあります。
 
 Even though today, we are focusing on a small number of lines of code to a particular thing which is image classification and we are not learning much math or theory, over these seven weeks and then part two, we are going to go deeper and deeper. 
 
-今日、私たちは画像分類である特定のものに少数のコードの行に焦点を合わせています、そして私達はこれらの7週間そしてそれから第2部に渡ってあまり多くの数学や理論を学んでいません。 。
+今日、私たちは特に画像識別と呼ばれる分野の少数のコードに焦点をおいていおり、数学や理論については深く学びません、これからの７週間やパート2のコースで、より深く深く学んで行きます。
 
 ### Where can that take you? [[53:05](https://youtu.be/BWWm4AzsdLk?t=3185)]
-それはどこであなたを連れて行きますか？
+どこまで行けるか？
 
 ![](lesson1/108.png)
 
 This is Sarah Hooker. She did our first course a couple of years ago. She started learning to code two years before she took our course. She started a nonprofit called Delta Analytics, they helped build this amazing system where they attached old mobile phones to trees in Kanyan rain forests and used it to listen for chainsaw noises, and then they used deep learning to figure out when there was a chainsaw being used and then they had a system setup to alert rangers to go out and stop illegal deforestation in the rainforests. That was something she was doing while she was in the course as part of her class projects. 
 
-これはSarah Hookerです。 彼女は数年前に私達の最初のコースをやりました。 彼女は私たちの講座を受講する2年前にコーディングの習得を始めました。 彼女はDelta Analyticsと呼ばれる非営利団体を始め、彼らが古い携帯電話をKanyanの熱帯雨林の木々に取り付けてチェーンソーの騒音を聞くために使った、そしてチェーンソーの存在を知るために深い学習を使ったこの素晴らしいシステムの構築を助けました。 それから彼らはレンジャーに警告して熱帯雨林の違法な森林伐採を阻止するようにシステムを設定しました。 それは彼女がクラスのプロジェクトの一部としてコースにいる間彼女がしていたことでした。
+彼女はSarah Hooker。 数年前にこのコースの最初のバージョンを受講しました。彼女はこの講座を受講する二年前にプログラミングの勉強を始めました。 彼女はDelta Analyticsと呼ばれる非営利団体を作り、古い携帯電話をKanyanの熱帯雨林の木々に取り付けてチェーンソーの音を検知する素晴らしいシステムを作り、彼女らが活用したディープラーニングはチェーンソーの存在を検知し、レンジャーにアラートを発信して熱帯雨林の違法な森林伐採を阻止しました。それは彼女がクラスのプロジェクトの一部としてコースを受講している間に行ったことでした。
 
 ![](lesson1/109.png)
 She is now a Google Brain researcher, publishing some papers, and now she is going to Africa to set up a Google Brain's first deep learning research center in Africa. She worked her arse off. She really really invested in this course. Not just doing all of the assignments but also going out and reading Ian Goodfellow's book, and doing lots of other things. It really shows where somebody who has no computer science or math background at all can be now one of the world's top deep learning researchers and doing very valuable work.
 
-彼女は現在Google Brainの研究者で、いくつかの論文を発表しています。そして今、彼女はアフリカにGoogle Brainの最初のディープラーニング研究センターを設立するためにアフリカに行く予定です。 彼女は懸命に働いた。 彼女は本当にこのコースに本当に投資しました。 すべての課題を実行するだけでなく、出て行ってIan Goodfellowの本を読み、そしてその他多くのことを行います。 コンピュータサイエンスや数学の知識をまったく持たない誰かが、世界のトップディープラーニング研究者の一人になり、非常に貴重な仕事をすることができる場所を示しています。
+彼女は現在Google Brainの研究者で、何本か論文も発表しています。今、彼女はアフリカにGoogle Brain最初のディープラーニング研究所を設立するためにアフリカに行く予定です。 彼女はとても懸命に働いた。 彼女は本当に本当にこのコースに本当に労力を費やしました。 すべての課題をこなすだけでなく、外に出てIan Goodfellowの本を読み、そしてその他たくさんのことを行いました。 これはコンピュータサイエンスや数学の知識をまったく持たない人が、世界クラスのトップディープラーニング研究者の一人になり、非常に貴重な仕事をできることを示しています。
 
 [[54:49](https://youtu.be/BWWm4AzsdLk?t=3289)]
 
@@ -664,35 +664,35 @@ She is now a Google Brain researcher, publishing some papers, and now she is goi
 
 Another example from our most recent course, Christine Payne. She is now at OpenAI and you can find [her post](http://christinemcleavey.com/clara-a-neural-net-music-generator/) and actually listen to her music samples of something she built to automatically create chamber music compositions. 
 
-私たちの最も最近のコース、クリスティンペインからのもう一つの例。 彼女は現在OpenAIにいます、そしてあなたは[彼女の投稿]（http://christinemcleavey.com/clara-a-neural-net-music-generator/）を見つけることができ、実際に彼女が自動的に部屋を作成するために作った何かの彼女の音楽サンプルを聴くことができます 音楽作品。
+最も最近のコースの受講者、Christine Payneの例です。 彼女は現在OpenAIにいます、[彼女の投稿]（http://christinemcleavey.com/clara-a-neural-net-music-generator/） を見て、自動的に生成された室内楽の音楽のサンプルを聞くことができます。
 
 ![](lesson1/111.png)
 
 She is a classical pianist. Now I will say she is not your average classical pianist. She's a classical pianist who also has a master's in medical research in Stanford, and studied neuroscience, and was a high-performance computing expert at DE Shaw, Co-Valedictorian at Princeton. Anyway. Very annoying person, good at everything she does. But I think it's really cool to see how a domain expert of playing piano can go through the fastai course and come out the other end as OpenAI fellow. 
 
-彼女は古典的なピアニストです。 今私は彼女があなたの平均的な古典的なピアニストではないと言うつもりです。 彼女はスタンフォード大学で医学研究の修士号を持ち、神経科学を学び、プリンストンのCo-ValedictorianのDE Shawで高性能コンピューティングのエキスパートでした。 とにかく。 非常に迷惑な人、彼女がするすべてのことが得意です。 しかし、ピアノを弾くことを専門とするドメインエキスパートがどのようにfastaiコースを通過し、OpenAIフェローとして反対側に出ることができるかを見るのは本当に素晴らしいと思います。
+彼女はクラシックピアニストです。 しかし彼女は平均的なクラシックピアニストではありません。 彼女はスタンフォード大学で医学研究の修士号を持ち、神経科学を学び、DE Shawの高性能コンピューティングの専門家で、プリンストンの共同卒業生代表でした とにかくすさまじい人、彼女はすべてのことが得意です。 しかし、ピアノを弾くことが専門な専門家がどのようにfastaiコースを終了し、OpenAIフェローとして旅立てることは本当に素晴らしいと思います。
 
 Interestingly, one of our other alumni of the course recently interviewed her for a blog post series he is doing on top AI researchers and she said one of the most important pieces of advice she got was from me and she said the advice was:
 
-興味深いことに、コースの私達の他の卒業生の一人は最近彼がトップのAI研究者に関してやっているブログポストシリーズのために彼女にインタビューしました、そして彼女は彼女が得たアドバイスの最も重要な部分の1つが私からだったと言いました、
+興味深いことに、コースの他の卒業生の一人は最近彼がトップのAI研究者関するブログ記事シリーズのために彼女にインタビューしました。そして彼女はこれまで得たアドバイスの最も重要なものの1つが私からだったと述べました。
 
 > #### Pick one project. Do it really well. Make it fantastic. [56:20](https://youtu.be/BWWm4AzsdLk?t=3380)
-プロジェクトを1つ選びます。 本当にうまくやってください。 それを幻想的にしなさい。
+プロジェクトを決め、とても上手にこなし、素晴らしいものにしなさい
 
 
 We're going to be talking a lot about you doing projects and making them fantastic during this course.
 
-このコースでは、皆さんがプロジェクトを実行し、それらを素晴らしいものにすることについて多くのことを話します。
+このコースでは、皆さんがプロジェクトを実行して素晴らしいものにすることについて多くを語ります。
 
 [[56:36](https://youtu.be/BWWm4AzsdLk?t=3396)]
 Having said that, I don't really want you to go to AI or Google Brain. What I really want you to do is to go back to your workplace or your passion project and apply these skills there. 
 
-とは言っても、私はあなたにAIやGoogle Brainに行きたくないのです。 私が本当にしてほしいことはあなたの職場やあなたの情熱プロジェクトに戻り、そこでこれらのスキルを適用することです。
+とは言え、私はあなたにOpenAIやGoogle Brainに行ってほしいわけではないのです。 私が本当にしてほしいことは、あなたの職場やあなたの情熱を燃やすプロジェクトに戻り、そこでこのスキルを発揮することです。
 
 ![](lesson1/112.png)
 MIT released a deep learning course and they highlighted in their announcement this medical imaging example. One of our students Alex who is a radiologist said you guys just showed a model overfitting. I can tell because I am a radiologist and this is not what this would look like on a chest film. This is what it should look like and as a deep learning practitioner, this is how I know this is what happened in your model. So Alex is combining his knowledge of radiology and his knowledge of deep learning to assess MIT's model from just two images very accurately. So this is actually what I want most of you to be doing is to take your domain expertise and combine it with the deep learning practical aspects you'll learn in this course and bring them together like Alex is doing here. So a lot of radiologists have actually gone through this course now and have built journal clubs and American Council of Radiology practice groups. There's a data science institute at the ACR now and Alex is one of the people who is providing a lot of leadership in this area. And I would love you to do the same kind of thing that Alex is doing which is to really bring deep learning leadership into your industry and to your social impact project, whatever it is that you are trying to do. 
 
-MITはディープラーニングコースを発表し、発表の中でこの医療用画像処理の例を強調しました。放射線科医である私達の学生アレックスはあなたがみんなちょうどモデルの装備を見せたと言いました。私は放射線科医であり、これが胸部映画のように見えるものではないので、私は言うことができます。これはそれがどのように見えるべきかであり、深い学習の実践者として、これは私がこれがあなたのモデルで起こったことであることを私が知っている方法です。そのため、Alexは自分の放射線学の知識と深い学習の知識を組み合わせて、2つの画像からMITのモデルを非常に正確に評価しています。ですから、実際にこれは私があなたのほとんどにしてほしいことはあなたのドメインの専門知識を取り、このコースで学ぶであろう深い学習の実用的な側面とそれを結合することです。そのため、多くの放射線科医が実際にこのコースを通過し、ジャーナルクラブとAmerican Council of Radiologyのプラクティスグループを設立しました。現在ACRにはデータサイエンス研究所があり、Alexはこの分野で多くのリーダーシップを発揮している人々の1人です。そして、アレックスがやっているのと同じようなことをしてほしいと願っています。それはあなたがやろうとしていることであれ、本当にあなたの業界とあなたの社会的影響プロジェクトに深い学習指導力をもたらします。
+MITはディープラーニングコースを発表し、その中でこの医療用画像処理の例を強調しました。放射線科医であるこのコースの生徒Alexはみんなにこのモデルは過学習であると言いました。私は放射線科医で、これが胸部画像のように見えないのでそう言うことが言えると。これはディープラーニングの専門家として、モデルに何が起こったかを知る方法を示しています。なので、Alexは自分の放射線学の知識とディープラーニングの知識を組み合わせて、2つの画像からMITのモデルを非常に正確に評価しました。ですから、私が実際にみなさんにしてほしいことは、みなさんの専門知識を組み合わせてディープラーニングの実践的な面を組み合わせることです。そして、多くの放射線科医が実際にこのコースを受講し、ジャーナルクラブとアメリカ癌放射線学（ACR）の実践グループを設立しました。現在ACRにはデータサイエンス研究所があり、Alexはこの分野で多大なリーダーシップを発揮している1人です。そして、みなさんにもAlexと同じようなことをやってほしいと願っています。それはあなたがやろうとしていることであっても、本当にあなたの業界とあなたの社会的に影響を与えるプロジェクトにディープラーニングへのリーダーシップをもたらします。
 
 [[58:22](https://youtu.be/BWWm4AzsdLk?t=3502)]
 
@@ -700,7 +700,7 @@ MITはディープラーニングコースを発表し、発表の中でこの�
 
 Another great example. This is Melissa Fabros who is a English literature PhD who studied gendered language in English literature or something and actually Rachel at the previous job taught her to code. Then she came to the fastai course. She helped Kiva, a micro lending a social impact organization, to build a system that can recognize faces. Why is that necessary? We're going to be talking a lot about this but because most AI researchers are white men, most computer vision software can only recognize white male faces effectively. In fast, I think it was IBM system was like 99.8% accurate on common white face men versus 65% accurate on dark skinned women. So it's like 30 or 40 times worse for black women versus white men. This is really important because for Kiva, black women perhaps are the most common user base for their micro lending platform. So Melissa after taking our course, again working her arse off, and being super intense in her study and her work won this $1,000,000 AI challenge for her work for Kiva. 
 
-もう一つの素晴らしい例です。これはメリッサ・ファブロス氏で、英文学などでジェンダー言語を研究した英文学博士で、以前の仕事でレイチェルがコードを教えてくれました。それから彼女はfastaiコースに来ました。彼女は、社会的影響力のある組織であるマイクロローンのKivaが、顔を認識できるシステムを構築するのを助けました。なぜそれが必要なのでしょうか。私たちはこれについて多く話しているつもりですが、ほとんどのAI研究者は白人男性なので、ほとんどのコンピュータビジョンソフトウェアは白人男性の顔しか効果的に認識できません。一言で言えば、IBMのシステムは一般的な白い顔の男性で99.8％正確であるのに対し、浅黒い肌の女性では65％正確だったと思います。だから、黒人女性と白人男性の30〜40倍も悪いのです。これは本当に重要です。なぜならKivaにとって、黒人女性はおそらく彼らのマイクロ融資プラットフォームの最も一般的なユーザーベースであるからです。それでメリッサは私達のコースを受講し、再び懸命に働き、そして彼女の研究で非常に激しくなった後、彼女の仕事はKivaのための彼女の仕事のためにこの100万ドルのAIチャレンジを勝ち取りました。
+もう一つの素晴らしい例です。彼女はMelissa Fabros、英文学などでジェンダー言語を研究した英文学博士で、以前の職場でレイチェルがプログラミングを教えていました。それから彼女はfastaiコースに来ました。彼女は、社会的影響力のある組織であるマイクロ融資のKivaで、顔認識システムを構築するのを助けました。なぜそれが必要なのか。私たちはこのことについて多く話しているつもりですが、ほとんどのAI研究者は白人男性なので、ほとんどの画像認識顔ソフトは白人男性の顔しか的確に認識できません。簡単に言えば、IBMのシステムは一般的な白い肌の男性で99.8％の正確な認識率であるのに対し、浅黒い肌の女性では65％の正確さの認識率だったと思います。だから、黒人女性は白人男性の30〜40倍も悪いのです。これは本当に重要です。なぜならKivaにとって、黒人女性はおそらく彼らのマイクロ融資プラットフォームの最も一般的なユーザー層だからです。それでMelissaはこのコースを受講し、再び懸命に働き、この研究に熱心に取り組み、彼女の研究はAIチャレンジで彼女のLivaでの仕事の結果で１００万ドルを勝ち取りました。
 
 [[59:53](https://youtu.be/BWWm4AzsdLk?t=3593)]
 
@@ -708,7 +708,7 @@ Another great example. This is Melissa Fabros who is a English literature PhD wh
 
 Karthik did our course and realized that the thing he wanted to do wasn't at his company. It was something else which is to help blind people to understand the world around them. So he started a new startup called envision. You can download the app and point your phone to things and it will tell you what it sees. I actually talked to a blind lady about these kinds of apps the other day and she confirmed to me this is a super useful thing for visually disabled users.  
 
-Karthikは私たちのコースをやり、彼がやりたかったことは彼の会社ではなかったことに気づきました。 それは盲目の人々が彼らの周りの世界を理解するのを助けることである他の何かでした。 それで彼はenvisionと呼ばれる新しいスタートアップを始めました。 あなたはアプリをダウンロードして物事にあなたの携帯電話を向けることができ、それはそれが見ているものを教えてくれるでしょう。 私は先日この種のアプリについて実際に盲目の女性と話をしました、そして彼女は私にこれが視覚障害者にとって非常に役に立つことであることを確認しました。
+Karthikは私たちのコースを受講し、彼がやりたかったことは彼の会社にはないことに気づきました。 それは盲目の人々が周りの世界を理解するのを補助する他の何かでした。 なので彼はenvisionという新しいスタートアップを立ち上げました。 あなたはアプリをダウンロードして周りの物にスマートフォンを向けると、その物体がなにか教えてくれるでしょう。 私は先日こういったアプリについて実際に盲目の女性と会話し、彼女はこれが視覚障害者にとって非常に役に立つものであることを確認しました。
 
 
 [[1:00:24](https://youtu.be/BWWm4AzsdLk?t=3624)]
