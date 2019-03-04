@@ -716,47 +716,47 @@ Karthikは私たちのコースを受講し、彼がやりたかったことは�
 
 The level that you can get to, with the content that you're going to get over these seven weeks and with this software can get you right to the cutting edge in areas you might find surprising. I helped a team of some of our students and some collaborators on actually breaking the world record for how quickly you can train ImageNet. We used standard AWS cloud infrastructure, cost of $40 of compute to train this model using fastai library, the technique you learn in this course. So it can really take you a long way. So don't be put off by this what might seem pretty simple at first. We are going deeper and deeper.
 
-あなたが到達できるレベルは、あなたがこれらの7週間にわたって得ようとしている内容とこのソフトウェアであなたが驚くかもしれない分野の最先端にあなたを正しくすることができます。 私は何人かの学生と共同研究者のチームがImageNetをどれだけ早くトレーニングできるかについて世界記録を破るのを助けました。 このコースで習得した手法であるfastaiライブラリを使用してこのモデルをトレーニングするには、標準のAWSクラウドインフラストラクチャ、40ドルのコンピューティングコストを使用しました。 だからそれは本当にあなたに長い道のりを使うことができます。 それで、最初はかなり単純に思えるかもしれないものによってこれによって延期されないでください。 私達はますます深くなっています。
+あなたがこれからの７週間で学ぶコンテンツとソフトウェアで到達可能なレベルは、驚くほどの最先端のものになるでしょう。私は何人かの学生と共同研究者のチームが、ImageNetをどれだけ早く訓練できるかの世界記録を破ることを助けました。我々はAWSのクラウド設備を使い、40$の料金のコンピュータでfastaiライブラリを使ってこのコースであなたが学ぶ手法でモデルを訓練しました。だからあなたは本当に長い道をゆくことができます。なので、最初は単純に見えるようなことも先延ばしにしないでください。私達は深く深く行きます。
 
 [[1:01:17](https://youtu.be/BWWm4AzsdLk?t=3677)]
 ![](lesson1/116.png)
 
 You can also use it for other kinds of passion project. Helena Sarin - you should definitely check out her Twitter account [@glagolista](https://twitter.com/glagolista). This art is basically a new style of art that she's developed which combines her painting and drawing with generative adversarial models to create these extraordinary results. I think this is super cool. She is not a professional artists, she is a professional software developer but she keeps on producing these beautiful results. When she started, her art had not really been shown or discussed anywhere, now there's recently been some quite high profile article describing how she is creating a new form of art. 
 
-他の種類の情熱プロジェクトにも使用できます。 Helena Sarin  - あなたは間違いなく彼女のTwitterアカウント[@glagolista]（https://twitter.com/glagolista）をチェックするべきです。 この芸術は基本的に彼女が開発した芸術の新しいスタイルで、これらの素晴らしい結果を生み出すために彼女の絵と絵を生成的な敵対的なモデルと組み合わせます。 これは超クールだと思います。 彼女はプロのアーティストではなく、プロのソフトウェア開発者ですが、彼女はこれらの美しい結果を生み出し続けています。 彼女が始めたとき、彼女の芸術は実際にはどこにも見せられたり議論されたりしていませんでした。
+これは他の種類の情熱をかけるプロジェクトにも活用できます。Helena Sarin  - あなたは必ず彼女のTwitterアカウントをチェックすべきです。これは彼女が開発した新しいスタイルの芸術で、彼女が書いた絵と敵対的生成モデルを組み合わせて素晴らしい作品を作り出しています。これはとてもクールだと思います。彼女はプロのアーティストではなく、彼女はプロのソフトウェア開発者ですが、このような素晴らしい結果を生み出し続けています。彼女がこれを始めたとき、彼女の芸術は実際にはどこに対しても見せられたり議論されたりはしていませんでした。近頃では、彼女が新しい形式の芸術をどのように生み出すのかに注目した記事がいくつもあります。
 
 ![](lesson1/117.png)
 
 Equally important, Brad Kenstler who figured out how to make a picture of Kanye out of pictures of Patrick Stewart's head. Also something you will learn to do if you wish to. This particular type of what's called "style transfer" - it's a really interesting tweak that allowed him to do something that hadn't quite been done before. This particular picture helped him to get a job as a deep learning specialist at AWS.
 
-同様に重要なのは、Patrick Stewartの頭の写真からKanyeの写真を作る方法を見つけ出したBrad Kenstlerです。 あなたが望むならまたあなたがすることを学ぶであろう何か。 「スタイル転送」と呼ばれるもののこの特定のタイプ - それは彼が以前にされたことがなかった何かをすることを可能にした本当に面白い微調整です。 この特定の写真は、彼がAWSの深い学習スペシャリストとしての仕事を得るのを助けました。
+同じくらい重要なものとして、Patrick Stewartの頭の絵からKanyeの絵を作り出したBrad Kenstlerです。あなたが同じようなことをしたいならやがて学ぶであろう内容です。この特定の手法は”スタイル転送”と呼ばれるものです。 - これは以前ならできなかったことができるようになる本当に面白い微調整です。この絵は彼がAWSのディープラーニングスペシャリストとしての職を得ることを助けました。
 
 [[1:02:41](https://youtu.be/BWWm4AzsdLk?t=3761)]
 
 Another alumni actually worked at Splunk as a software engineer and he designed an algorithm which basically turned Splunk to be fantastically good at identifying fraud and we'll talk more about it shortly. 
 
-別の卒業生は実際にソフトウェアエンジニアとしてSplunkで働いていました、そして、彼は基本的にSplunkが詐欺を識別することにおいて素晴らしく上手くなるようにアルゴリズムを設計しました、そして、我々はまもなくそれについてもっと話します。
+ある他の卒業生はソフトウェアエンジニアとしてSplunkで働いていおり、彼はSplunkが詐欺を識別することを素晴らしく向上させるアルゴリズムを設計しました、これについてはすぐあとにもっと話します。
 
 ![](lesson1/118.png)
 
 If you've seen Silicon Valley, the HBO series, the hotdog Not Hotdog app - that's actually a real app you can download and it was built by Tim Anglade as a fastai student project. So there's a lot of cool stuff that you can do. It was Emmy nominated. We only have one Emmy nominated fastai alumni at this stage, so please help change that.
 
-シリコンバレー、HBOシリーズ、ホットドッグではないホットドッグアプリを見たことがあるのであれば、実際にダウンロードできる本物のアプリであり、Tim Angladeによってfastaiの学生プロジェクトとして構築されました。 だからあなたができることがたくさんあります。 エミー賞にノミネートされました。 現時点では、エミー賞に推薦された1人のfastai卒業生しかいませんので、それを変える手助けをしてください。
+もしシリコンバレーでHBOシリーズ、ホットドッグアプリではないホットドッグを見たことがあるならば - これはTim Angladeがfastaiの学生プロジェクトで作成した実際にダウンロードできるアプリです。だからあなたができることはたくさんあります。これはエミー賞にノミネートされました。そんなfasiaiの卒業生は今のところこの人だけですので、あなたがこれを変える手助けをしてください。
 
 ![](lesson1/119.png)
 [[1:03:30](https://youtu.be/BWWm4AzsdLk?t=3810)]
 
 The other thing, the forum thread can turn into these really cool things. So Francisco was a really boring McKinsey consultant like me. So Francisco and I both have this shameful past that we were McKinsey consultants, but we left and we're okay now. He started this thread saying like this stuff we've just been learning about building NLP in different languages, let's try and do lots of different languages, and he started this thing called the language model zoo and out of that, there's now been an academic competition was won in Polish that led to an academic paper, Thai state of the art, German state of the art, basically as students have been coming up with new state of the art results across lots of different languages and this all is entirely done by students working together through the forum. 
 
-もう一つは、フォーラムのスレッドはこれらの本当にクールなものに変わることができます。 それで、Franciscoは私のように本当に退屈なMcKinseyコンサルタントでした。 それで、Franciscoと私は二人とも、私たちがMcKinseyのコンサルタントであったことを恥ずべき過去を持っています、しかし私たちは去りました、そして今大丈夫です。 彼はこのスレッドのように、NLPをさまざまな言語で構築する方法を学んでいます。さまざまな言語で試してみましょう。そして言語モデルzooという名前のところから始めました。 ポーランドで競争が勝ち抜かれ、学術論文、タイの最先端、ドイツの最先端が、基本的に学生がさまざまな言語で新しい最先端の結果を生み出してきたため、これらはすべてによって達成されました。 フォーラムを通して一緒に働く学生。
+もうひとつ、フォーラムのスレッドは本当にクールなものになります。Franciscoは私のような本当につまらないMcKinseyのコンサルタントでした。なのでFeanciscoと私はMcKinseyのコンサルトであった苦い過去があります。でももうそこから去りましたので大丈夫です。彼はこのスレッドのようにNLPを様々な言語に構築する方法を勉強しています。ぜひたくさんの言語で試してみましょう。彼が始めたこれはZooという言語モデルで、この学術論文はポーランドでの学術コンテストで勝利し、タイ語やドイツ度でも最先端の結果を出し、基本的に学生が様々な結果で最先端の結果を出しており、これらは基本的にこのフォーラムでを通じて学生が共同作業することで達成されました。
 
 So please get on the forum. But don't be intimidated because everybody you see on the forum, the vast majority of posting post all the darn time. They've been doing this a lot and they do it a lot of the time. So at first, it can feel intimidating because it can feel like you're the only new person there. But you're not. You're all new people, so when you just get out there and say like "okay all you people getting these state of the art results in German language modeling, I can't start my server, I try to click the notebook and I get an error, what do I do?" People will help you. Just make sure you provide all the information ([how to ask for help](https://forums.fast.ai/t/how-to-ask-for-help/10421)). 
 
-それでフォーラムに参加してください。 フォーラムにいるすべての人が投稿に圧倒的な時間を費やして投稿しているので、怖がらないでください。 彼らはこれをたくさんやってきました、そして、彼らはそれを多くの時間行います。 それで、最初は、あなたがそこにいる唯一の新しい人であるように感じることができるので、それは威圧的に感じることができます。 しかし、あなたは違います。 あなたはみんな新しい人です、そこで出かけて「こんなに最新の結果が得られるドイツ人のモデルを作っている人は大丈夫です、私はサーバーを起動できません。ノートブックをクリックしてみます。 エラーが発生しました。どうすればよいですか。」 人々はあなたを助けるでしょう。 すべての情報を必ず提供してください（[助けを求める方法]（https://forums.fast.ai/t/how-to-ask-for-help/10421））。
+なので、ぜひフォーラムに参加してください。フォーラムにいるすべての人たちは圧倒的な時間を費やしているように見えるかもしれないけれども、怖がらないでください。か彼らは多くそれをやってきて多くの時間を費やしました。そのために最初はあなただけが新しく始めた唯一の人のように感じるので、威圧的なものを感じるでしょう。しかしあなたは違います。あなたは新しい人です。あなたがそこに参加して「ねえ、最先端の結果が得られるドイツ語モデルが自分のサーバーで動かないんだけど、Notebookをクリックしてみたらエラーが出たんだ、どうすればいい？」と聞いてみましょう。みんながあなたを助けるでしょう。あなたが得たすべての情報を提供してください。
 
 Or if you've got something to add! If people are talking about crop yield analysis and you're a farmer and you think oh I've got something to add, please mention it even if you are not sure it's exactly relevant. It's fine. Just get involved. Because remember, everybody else in the forum started out also intimidated. We all start out not knowing things. So just get out there and try it!
 
-追加するものがある場合は、 人々が作物収量分析について話していて、あなたが農家であり、私が追加するものを持っていると思うなら、それが正確に関連していると確信できなくてもそれを述べてください。 大丈夫だよ。 ただ参加してください。 覚えておいて、フォーラムの他のみんなも怖がって始めました。 私たちは皆、事を知らないことから始めます。 だから、ただそこに出て、試してみてください。
+もし追加するものがあるならば！もし皆が作物の収穫量の分析が話しており、もしあなたが農家で、そのことについて追加のことが言えるのなら、ぜひそれが確かに関連しているかどうかわからなくても発言してください。それは良いことです。ただ参加してください。覚えておいてください、他のみんなも怯えながらフォーラムを始めました。みな最初は何も知らないのです。なのでこの場に参加して試してみましょう！
 
 [[1:05:59](https://youtu.be/BWWm4AzsdLk?t=3959)]
 **Question**: Why are we using ResNet as opposed to Inception?
