@@ -759,23 +759,24 @@ Or if you've got something to add! If people are talking about crop yield analys
 もし追加するものがあるならば！もし皆が作物の収穫量の分析が話しており、もしあなたが農家で、そのことについて追加のことが言えるのなら、ぜひそれが確かに関連しているかどうかわからなくても発言してください。それは良いことです。ただ参加してください。覚えておいてください、他のみんなも怯えながらフォーラムを始めました。みな最初は何も知らないのです。なのでこの場に参加して試してみましょう！
 
 [[1:05:59](https://youtu.be/BWWm4AzsdLk?t=3959)]
-**Question**: Why are we using ResNet as opposed to Inception?
-インセプションではなくResNetを使用しているのはなぜですか？
+**Question**: Why are we using ResNet as opposed to ?
+
+InceptionではなくResNetを使用するのはなぜですか？
 
 There are lots of architectures to choose from and it would be fair to say there isn't one best one but if you look at things like the Stanford DAWNBench benchmark of image classification, you'll see in first place, second place,  third place, and fourth place all use ResNet. ResNet is good enough, so it's fine. 
 ![](lesson1/120.png)
 
-選択できるアーキテクチャはたくさんあり、最良のものは1つもないと言ってもいいでしょうが、Stanford DAWNBenchの画像分類ベンチマークのようなものを見ると、1位、2位、3位に表示されます。 4位はすべてResNetを使用しています。 ResNetは十分に優れているので、大丈夫です。
+アーキテクチャの選択肢はいくつもあり、どれが一番良いというわけではないですが、Stanford DAWNBenchの画像分類ベンチマークを見ると、1位、2位、3位、4位はすべてResNetを使用しています。 ResNetは十分に優れているのでいいでしょう。
 
 The main reason you might want a different architecture is if you want to do edge computing, so if you want to create a model that's going to sit on somebody's mobile phone. Having said that, even there, most of the time, I reckon the best way to get a model onto somebody's mobile phone is to run it on your server and then have your mobile phone app talk to it. It really makes life a lot easier and you get a lot more flexibility. But if you really do need to run something on a low powered device, then there are special architectures for that. So the particular question was about Inception. That's a particular another architecture which tends to be pretty memory intensive but it's okay. It's not terribly resilient. One of the things we try to show you is stuff which just tends to always work even if you don't quite tune everything perfectly. So ResNet tends to work pretty well across a wide range of different kind of details around choices that you might make. So I think it's pretty good.
 
-異なるアーキテクチャが必要になる主な理由は、エッジコンピューティングを実行したい場合、つまり、誰かの携帯電話に搭載するモデルを作成したい場合です。それでも、ほとんどの場合、誰かの携帯電話にモデルを追加する最良の方法は、サーバーでそれを実行してから、携帯電話のアプリにそれを実行させることです。それは本当に人生をずっと楽にし、あなたはずっと多くの柔軟性を得ます。あなたが本当に低電力デバイス上で何かを実行する必要が本当にあるのであればしかし、その後、そのための特別なアーキテクチャがあります。それで、特定の質問はインセプションについてでした。これはかなりメモリ集約的になりがちな別のアーキテクチャですが、問題はありません。それほどひどく回復力があるわけではありません。私たちがあなたに見せようとしていることの1つは、あなたがすべてを完璧に調整しなくても常にうまくいく傾向があるものです。だからResNetはあなたがするかもしれない選択のまわりのいろいろな種類の細部にわたってかなりうまくいく傾向があります。それで、それはかなり良いと思います。
+異なるアーキテクチャが必要になる主な理由は、あなたがエッジコンピューティングで実行したい場合、言い換えると携帯電話に搭載するモデルを作成したい場合です。しかしほとんどの場合において、携帯電話にモデル搭載する一番の方法は、サーバー上で実行してから携帯電話のアプリにそれを表示させることです。これは本当に生活をより簡単にし、多くの柔軟性を得られる。しかしあなたが本当に低電力デバイス上で何かを実行する必要があるのであれば、そのための特別なアーキテクチャがあります。先の質問はInceptionについてでしたね。これはかなりメモリを消費する別のアーキテクチャですが、大丈夫。それほど復元力はありません。あなたに見せたいことの1つは、すべてを完璧に調整しなくてもだいたいうまくいって十分だということです。なのでResNetはあなたがやりたいと選択したいろいろな種類のものに対して細部にわたってかなりうまくいく傾向があります。だからこれはとてもいいと思います。
 
 [[1:07:58](https://youtu.be/BWWm4AzsdLk?t=4078)]
 
 We've got this trained model and what's actually happened as we'll learn is it's basically creating a set of weights. If you've ever done anything like a linear regression or logistic regression, you'll be familiar with coefficients. We basically found some coefficients and parameters that work pretty well and it took us a minute and 56 seconds. So if we want to start doing some more playing around and come back later, we probably should save those weights. You can just go `learn.save` and give it a name. It's going to put it in a model subdirectory in the same place the data came from, so if you save different models or different data bunches from different datasets, they'll all be kept separate. So don't worry about it.
 
-我々はこの訓練されたモデルを持っています、そして我々が学ぶであろうように実際に起こっていることはそれが基本的に重みのセットを作成することです。 線形回帰またはロジスティック回帰のようなことをしたことがあるなら、あなたは係数に精通しているでしょう。 我々は基本的にかなりうまくいくいくつかの係数とパラメータを見つけました、そしてそれは私たちに1分56秒かかった。 それで、もう少し遊び始めて後で戻ってきたいのなら、おそらくそれらの重みを保存するべきです。 `learn.save`に移動して名前を付けるだけです。 データを取得した場所と同じ場所のmodelサブディレクトリに配置するので、異なるモデルや異なるデータセットを異なるデータセットから保存した場合、それらはすべて別々に保存されます。 それで心配しないでください。
+私達にはこの訓練されたモデルがあり、これから学ぶときにやることは基本的に重みのセットを作成することです。もしあなたに線形回帰またはロジスティック回帰の経験があるなら、係数のことをよく知っているでしょう。私達は基本的にかなり上手く動く複数の係数とパラメータを見つけ、これは1分56秒かかりました。もしもう少しいろいろやってから戻ってくるなら、その重みを保存したほうがいい。 `learn.save`に移動して名前を付けるだけです。 データを取得したのと同じ場所のmodelのサブディレクトリに配置するので、異なるモデルや異なるデータセットを異なるデータセットから保存した場合、これらはすべて別々に保存されます。 なので心配し無用です。
 
 ```python
 learn.save('stage-1')
@@ -791,11 +792,11 @@ To see what comes out, we could use this class for class interpretation. We are 
 
 That's all the information we need to interpret that model. 
 
-何が出るのかを見るために、クラスの解釈にこのクラスを使うことができます。 このファクトリメソッドを学習者から使用することになるので、学習オブジェクトを渡します。 学習オブジェクトが2つのことを知っていることを忘れないでください。
+何が表示されるかを確認するために、クラスの実行のためにこのクラスを使うことができます。 学習器でこのファクトリメソッドを使用することになるので、学習用オブジェクトを渡します。 学習用オブジェクトについて2つのことを知り忘れないでください。
 1.あなたのデータは何ですか
-あなたのモデルは何ですか。 今それは単なる建築ではなく、実際に訓練されたモデルです
+2.あなたのモデルは何ですか。 これは単なるアーキテクチャではなく、既に訓練済みのモデルです。
 
-これが、そのモデルを解釈するために必要なすべての情報です。
+これがモデルの解釈に必要なすべての情報です。
 
 ```python
 interp = ClassificationInterpretation.from_learner(learn)
@@ -803,7 +804,8 @@ interp = ClassificationInterpretation.from_learner(learn)
 
 One of the things, perhaps the most useful things to do is called plot_top_losses. We are going to be learning a lot about this idea of loss functions shortly but in short, a loss function is something that tells you how good was your prediction. Specifically that means if you predicted one class of cat with great confidence, but actually you were wrong, then that's going to have a high loss because you were very confident about the wrong answer. So that's what it basically means to have high loss. By plotting the top losses, we are going to find out what were the things that we were the most wrong on, or the most confident about what we got wrong. 
 
-そのうちの1つ、おそらくやるべき最も有用なことはplot_top_lossesと呼ばれるものです。 私たちはまもなくこの損失関数の考え方について多くを学びますが、要するに、損失関数はあなたの予測がどれほど良かったかをあなたに伝えるものです。 具体的に言うと、あるクラスの猫を大きな自信を持って予測したが実際にはあなたが間違っていた場合、間違った答えに非常に自信を持っていたので、それは大きな損失になります。 だからそれが基本的に高い損失を持つことを意味するものです。 トップロスをプロットすることによって、私達は私達が私達が最も間違っていたこと、または私達が間違ったことについて最も確信していることは何であるかを見つけようとしています。
+おそらくもっともやるべきことの一つはplot_top_lossesというものです。 このあとこの損失関数についてはたくさん学習しますが、要するに、損失関数とはあなたの予測がどれほど良かったか教えてくれるものです。具体的には、もしあるクラスの猫を自信を持って予測したが実際には間違っていた場合、間違った答え
+に非常に自信を持っていたので、それだけ大きな損失になります。なのでこれは基本的に高い損失を持つことを意味しています。 最も高い損失のものをプロットすることで、私達は私達が最も悪かったもの、もしく最も自信があったのに間違ったものは何かを見つけようとします。
 
 ```python
 interp.plot_top_losses(9, figsize=(15,11))
@@ -813,11 +815,11 @@ interp.plot_top_losses(9, figsize=(15,11))
 
 It prints out four things. What do they mean? Perhaps we should look at the document.
 
-それは4つのものをプリントアウトします。 彼らはどういう意味ですか？ 多分私達は文書を見るべきです。
+これは4つのものを表示します。それはどういう意味か？ ドキュメントを確認すべきでしょう。
 
 We have already seen `help`, and `help` just prints out a quick little summary. But if you want to really see how to do something use `doc`.
 
-私たちはすでに `help`を見ました、そして` help`はちょっとした要約を単に出力するだけです。 しかし、あなたが本当に何かをする方法を見たいのなら、 `doc`を使ってください。
+私たちはすでに `help`を見ましたが` help`は簡単な要約を出力するだけです。 もしあなたが本当に使い方を確認したいなら `doc`を使いましょう。
 
 ![](lesson1/121.png)
 
@@ -825,17 +827,17 @@ We have already seen `help`, and `help` just prints out a quick little summary. 
 
 `doc` tells you the same information as `help` but it has this very important thing which is `Show in docs`. When you click on it, it pops up the documentation for that method or class or function or whatever:
 
-`doc`は` help`と同じ情報をあなたに伝えますが、それは `Show in docs`であるこの非常に重要なことを持っています。 あなたがそれをクリックすると、それはそのメソッドやクラスあるいは関数あるいはその他何でものためのドキュメンテーションをポップアップする。
+`doc`は` help`と同じ情報を表示しますが、 `Show in docs`であることは非常に重要意味合いがあります。あなたがこれをクリックすると、そのメソッドやクラス・関数あるいはその他いろいろなドキュメントをポップアップします。
 
 ![](lesson1/122.png)
 
 It starts out by showing us the same information about what are the parameters it takes a long with the doc string. But then tells you more information:
 
-それは、doc文字列を使用して長時間かかるパラメータについて、同じ情報を表示することから始めます。 しかし、それからあなたにもっと多くの情報を伝えます：
+これはdoc文字列によって同じパラメータの情報を得るのに時間がかかることです。 しかしそのことであなたにもっと多くの情報を伝えます：
 
 > The title of each image shows: prediction, actual, loss, probability of actual class.
 
->各画像のタイトルは次のとおりです。予測、実際、損失、実際のクラスの可能性。
+>各画像のタイトルは次のとおりです。予測の値、実際の値、損失値、実際のクラスの可能性。
 
 The documentation always has working code. This is your friend when you're trying to figure out how to use these things. The other thing I'll mention is if you're somewhat experienced Python programmer, you'll find the source code of fastai really easy to read. We are trying to write everything in just a small number (much less than half a screen) of code. If you click on `[source]` you can jump straight to the source code.
 
