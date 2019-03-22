@@ -805,7 +805,7 @@ interp = ClassificationInterpretation.from_learner(learn)
 One of the things, perhaps the most useful things to do is called plot_top_losses. We are going to be learning a lot about this idea of loss functions shortly but in short, a loss function is something that tells you how good was your prediction. Specifically that means if you predicted one class of cat with great confidence, but actually you were wrong, then that's going to have a high loss because you were very confident about the wrong answer. So that's what it basically means to have high loss. By plotting the top losses, we are going to find out what were the things that we were the most wrong on, or the most confident about what we got wrong. 
 
 おそらくもっともやるべきことの一つはplot_top_lossesというものです。 このあとこの損失関数についてはたくさん学習しますが、要するに、損失関数とはあなたの予測がどれほど良かったか教えてくれるものです。具体的には、もしあるクラスの猫を自信を持って予測したが実際には間違っていた場合、間違った答え
-に非常に自信を持っていたので、それだけ大きな損失になります。なのでこれは基本的に高い損失を持つことを意味しています。 最も高い損失のものをプロットすることで、私達は私達が最も悪かったもの、もしく最も自信があったのに間違ったものは何かを見つけようとします。
+に非常に自信を持っていたので、それだけ大きな損失になります。なのでこれは基本的に高い損失を持つことを意味しています。 最も高い損失のものをプロットすることで、私達は私達が最も悪かったもの、もしくは最も自信があったのに間違ったものは何かを見つけようとします。
 
 ```python
 interp.plot_top_losses(9, figsize=(15,11))
@@ -841,32 +841,31 @@ It starts out by showing us the same information about what are the parameters i
 
 The documentation always has working code. This is your friend when you're trying to figure out how to use these things. The other thing I'll mention is if you're somewhat experienced Python programmer, you'll find the source code of fastai really easy to read. We are trying to write everything in just a small number (much less than half a screen) of code. If you click on `[source]` you can jump straight to the source code.
 
-ドキュメンテーションには常に作業コードがあります。 あなたがこれらのことをどうやって使うかを考え出そうとしているとき、これはあなたの友人です。 私が言及するもう一つのことは、あなたが幾分経験のあるPythonプログラマーであれば、あなたはfastaiのソースコードが本当に読みやすいと感じるでしょう。 私たちは、ほんの少しの（半分のスクリーンよりずっと少ない）コードですべてを書き込もうとしています。 [source]をクリックすると、ソースコードに直接ジャンプできます。
+ドキュメントにはいつも動くコードがあります。これはあなたがどうやってこれらのものを使って実行すべきか試すときの友です。付け加えると、もしあなたがいくらかのPythonプログラマーの経験があるなら、fastaiのソースコードはとても読みやすいと感じるでしょう。 我々は数行の（画面半分よりもっとすくない）コードですべてを行おうとしています。 [source]をクリックすると、ソースコードに直接移動できます。
 
 ![](lesson1/123.png)
 
 Here is plot_top_loss, and this is also a great way to find out how to use the fastai library. Because nearly every line of code here,  is calling stuff in the fastai library. So don't be afraid to look at the source code.
 
-これがplot_top_lossです。これはfastaiライブラリの使い方を知るための素晴らしい方法でもあります。 ここのコードのほぼすべての行がfastaiライブラリのものを呼び出しているからです。 だから、ソースコードを見ることを恐れないでください。
+これはplot_top_loss、そしてfastaiライブラリの使い方を知るための素晴らしい方法です。 このコードのほぼすべての行がfastaiライブラリを呼び出しているからです。 なので、ソースコードを見ることを恐れないでください。
 
 [[1:12:48](https://youtu.be/BWWm4AzsdLk?t=4368)]
 
 So that's how we can look at top losses and these are perhaps the most important image classification interpretation tools that we have because it lets us see what we are getting wrong. In this case, if you are a dog and cat expert, you'll realize that the things that's getting wrong are breeds that are actually very difficult to tell apart and you'd be able to look at these and say "oh I can see why they've got this one wrong". So this is a really useful tool.
 
-それで私たちはトップロスを見ることができます、そしてこれらはおそらく私たちが持っている最も重要な画像分類解釈ツールです。 この場合、あなたが犬と猫の専門家であれば、間違っていることは実際には区別するのが非常に困難な品種であることに気付くでしょう。そしてこれらを見て言うことができるでしょう。 なぜ彼らはこれを間違っているのですか？ " だからこれは本当に便利なツールです。
+さて、我々はトップロスを見ることができます、これらはおそらく我々の持つ最も重要な画像識別解釈ツールです、これでどれが悪いのかを見ることができます。 この場合、あなたが犬猫の専門家であれば、間違ったものは実際に識別が非常に困難な品種であることに気付き、こう言うでしょう。「皆がこれを間違えたのはよく分かる」なので、これは本当に便利なツールです。
 
 ### Confusion matrix [1:13:21](https://youtu.be/BWWm4AzsdLk?t=4401)
 混同マトリックス
 
 Another useful tool, kind of, is to use something called a confusion matrix which basically shows you for every actual type of dog or cat, how many times was it predicted to be that dog or cat. But unfortunately, in this case, because it's so accurate, this diagonal basically says how it's pretty much right all the time. 
-もう1つの便利なツールは、混乱マトリックスと呼ばれるものを使用することです。これは、犬や猫の実際の種類ごとに基本的にあなたを示しています。 しかし、残念ながら、この場合、それは非常に正確なので、この対角線は基本的にどのようにしてそれが常に正しいかを示します。
+もう1つの便利なツールは、混同マトリックスというものです、基本的に各犬猫の実際のタイプと、それがどのくらい犬猫として予測されたかを示しています。。ただ残念ながら、今回はとても正確なので、この対角線は基本的にどのくらいそれが常に正しいかを示しています。
 
 ![](lesson1/10.png)
 
 And you can see there is slightly darker ones like a five here, it's really hard to read exactly what their combination is. So what I suggest you use is instead of, if you've got lots of classes, don't use confusion matrix, but this is my favorite named function in fastai and I'm very proud of this - you can call "most confused".
 
-
-そして、あなたはここで5つのように少し暗いものがあるのを見ることができます、それはそれらの組み合わせが何であるかを正確に読むことは本当に難しいです。 ですから、たくさんのクラスがある場合は、混同マトリックスを使用しないでください。しかし、これがfastaiでの私のお気に入りの名前付き関数であり、これを非常に誇りに思っています。 "
+ここの５つのように少し暗いものがありますが、これがどんな組み合わせであるかを認識することは難しいです。なのでたくさんのクラスがある場合は、混同マトリックスを使用しないほうがいいでしょう。でもこれは私のfastaiでのお気に入りの名前付き関数です、これを非常に誇りに思っています。 「一番混乱する」と呼びます。
 
 ### Most confused [[1:13:52](https://youtu.be/BWWm4AzsdLk?t=4432)]
 
@@ -888,25 +887,25 @@ interp.most_confused(min_val=2)
 - Prediction `'staffordshire_bull_terrier'`
 - This particular combination happened 7 times.
 
-most_confusedは、混同マトリックスから予測と実際の最も頻繁に間違っていた特定の組み合わせを取り出します。 この場合、 `（ 'american_pit_bull_terrier'、 'staffordshire_bull_terrier'、7）`：
- - 実際の「 'american_pit_bull_terrier」
- - 予測「staffordshire_bull_terrier」
- - この特定の組み合わせは7回起こりました。
+`most_confused`は、混同マトリックスから予想と実際の結果が最も頻繁に間違っていた組み合わせを取り出します。 `('american_pit_bull_terrier', 'staffordshire_bull_terrier', 7)`:の場合
+- 実際の値 `'american_pit_bull_terrier'` 
+- 予測値 `'staffordshire_bull_terrier'`
+- この組み合わせは7回発生
  
 So this is a very useful thing because you can look and say "with my domain expertise, does it make sense?"
 
-それで、これは非常に便利なことです。なぜなら、「私のドメインの専門知識を使っても意味がありますか」と言うことができるからです。
+これは非常に便利です、なぜならこれを見て「私のこの領域の専門知識を使う意味がありますか？」と言うことができるからです。
 
 ### Unfreezing, fine-tuning, and learning rates [[1:14:38](https://youtu.be/BWWm4AzsdLk?t=4478)]
 
 Let's make our model better. How? We can make it better by using fine-tuning. So far we fitted 4 epochs and it ran pretty quickly. The reason it ran pretty quickly is that there was a little trick we used. These convolutional networks, they have many layers. We'll learn a lot about exactly what layers are, but for now, just know it goes through a lot of computations. What we did was we added a few extra layers to the end and we only trained those. We basically left most of the model exactly as it was, so that's really fast. If we are trying to build a model at something that's similar to the original pre-trained model (in this case, similar to the ImageNet data), that works pretty well.
 
-モデルを良くしましょう。 どうやって？ 微調整を使用することで、より良くすることができます。 これまでのところ4つのエポックを装着していて、それはかなり速く走りました。 それがかなり速く走った理由は、私たちが使ったちょっとしたトリックがあったからです。 これらの畳み込みネットワークは、彼らは多くの層を持っています。 レイヤとは何かについて正確に学ぶことができますが、今のところ、それが多くの計算を経ることを知っているだけです。 私たちがしたことは、最後にいくつか追加のレイヤーを追加し、それらをトレーニングすることだけでした。 私たちは基本的にモデルの大部分を正確にそのまま残しました、それでそれは本当に速いです。 元の事前学習済みモデル（この場合はImageNetデータに似ています）に似たモデルでモデルを作成しようとしている場合、それは非常にうまく機能します。
+さぁ更にモデルを良くしましょう。どうやって？微調整を行うことでより良くすることができます。これまで4エポックを適用することですばやく良くできました。これら早く実行できた理由は、我々が少しトリックを使ったからです。この畳み込みネットワークには多くの層があります。レイヤとは何かについてあとで学びますが、今のところ、これには多くの計算がいると知っているだけでいいです。我々がしたのは、最後に複数のレイヤーを追加してそれをトレーニングしたことでした。基本的にはモデルの大部分を正確にそのまま残したので、それでそれは本当に早くできます。 元の事前訓練済みモデル（これはImageNetデータの件と似ています）に似たモデルを作成する場合、これはよく動きます。
 
 
 But what we really want to do is to go back and train the whole model. This is why we pretty much always use this two stage process. By default, when we call `fit` or `fit_one_cycle` on a ConvLearner, it'll just fine-tune these few extra layers added to the end and it will run very fast. It will basically never overfit but to really get it good, you have to call `unfreeze`. `unfreeze` is the thing that says please train the whole model. Then I can call fit_one_cycle again. 
 
-しかし、私たちが本当にやりたいことは、戻ってモデル全体を訓練することです。 これが、我々がほとんど常にこの2段階のプロセスを使用する理由です。 デフォルトでは、ConvLearnerで `fit`または` fit_one_cycle`を呼び出すと、最後に追加されたこれらのいくつかの追加のレイヤーを微調整するだけで、非常に高速に実行されます。 それは基本的にやり過ぎないでしょう、しかし本当にそれを良くするために、あなたは `unfreeze`を呼ばなければなりません。 `unfreeze`はモデル全体を訓練してくださいと言うことです。 それから私は再びfit_one_cycleを呼び出すことができます。
+でも私達が本当にしたいことは、戻ってモデル全体を訓練することです。 これが我々がほぼいつもこの2段階プロセスを踏む理由です。 デフォルトでは、ConvLearnerで `fit`または` fit_one_cycle`を呼び出すと、これは最後に追加されたこれらのいくつかのレイヤーを微調整するだけなので、非常に高速に実行されます。 これは基本的にやり過ぎないでしょうが、しかし本当にこれを良くするためには、 `unfreeze`を呼び出さなければいけません。 `unfreeze`はモデル全体を訓練するということです。 それから再びfit_one_cycleを呼び出すことができます。
 
 ```python
 learn.unfreeze()
@@ -921,6 +920,7 @@ epoch  train_loss  valid_loss  error_rate
 
 Uh-oh. The error got much worse. Why? In order to understand why, we are actually going to have to learn more about exactly what's going on behind the scenes. So let's start out by trying to get an intuitive understanding of what's going on behind the scenes. We are going to do it by looking at pictures.
 
+ああ、エラーがさらに悪化しました。なぜ？これを理解するためには、我々は実際にこの舞台裏で何が起きているのかを更に学ばなければいけません。では舞台裏で何がを凝っているのか直感的に理解することから始めましょう。写真を見ながらそれをやっていきます。
 ええとああ。 エラーはさらに悪化しました。 どうして？ その理由を理解するために、私たちは実際に舞台裏で何が起こっているのかについてもっと学ばなければなりません。 それでは、舞台裏で何が起こっているのかを直感的に理解することから始めましょう。 私たちは写真を見てそれをやろうとしています。
 
 [[1:16:28](https://youtu.be/BWWm4AzsdLk?t=4588)]
