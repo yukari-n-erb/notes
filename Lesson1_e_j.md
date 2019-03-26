@@ -928,7 +928,7 @@ Uh-oh. The error got much worse. Why? In order to understand why, we are actuall
 
 These pictures come from [a fantastic paper](https://cs.nyu.edu/~fergus/papers/zeilerECCV2014.pdf) by Matt Zeiler who nowadays is a CEO of Clarify which is a very successful computer vision startup and his supervisor for his PhD Rob Fergus. They wrote a paper showing how you can visualize the layers of a convolutional neural network. A convolutional neural network, which we will learn mathematically about what the layers are shortly, but the basic idea is that your red, green, and blue pixel values that are numbers from nought to 255 go into the simple computation (i.e. the first layer) and something comes out of that, and then the result of that goes into a second layer, and the result of that goes into the third layer and so forth. There can be up to a thousand layers of neural network. ResNet34 has 34 layers, and ResNet50 has 50 layers, but let's look at layer one. There's this very simple computation which is a convolution if you know what they are. What comes out of this first layer? Well, we can actually visualize these specific coefficients, the specific parameters by drawing them as a picture. There's actually a few dozen of them in the first layer, so we don't draw all of them. Let's just look at 9 at random. 
 
-これらの写真は、Matt Zeiler氏による[素晴らしい論文]（https://cs.nyu.edu/~fergus/papers/zeilerECCV2014.pdf）に由来しています。彼は、今日では非常に成功しているコンピュータビジョンのスタートアップであり、彼の上司であるClarifyのCEOです。彼の博士ロブファーガスのために。彼らは畳み込みニューラルネットワークの層を視覚化する方法を示す論文を書いた。畳み込みニューラルネットワークは、層が間もなく何であるかについて数学的に学びますが、基本的な考え方は、あなたの赤、緑、そして青のピクセル値が、0から255までの数字で、単純な計算に入るということです。そしてそこから何かが出てくると、その結果は2番目の層に入り、その結果は3番目の層に入ります。最大1000層のニューラルネットワークが存在できます。 ResNet34には34のレイヤーがあり、ResNet50には50のレイヤーがありますが、レイヤー1を見てみましょう。あなたがそれらが何であるかを知っていれば畳み込みであるこの非常に単純な計算があります。この最初の層から何が出ますか？ええと、これらの特定の係数、特定のパラメータは、絵として描くことで実際に視覚化できます。最初のレイヤーには実際には数十個ありますので、それらすべてを描画するわけではありません。ランダムに9を見てみましょう。
+これらの画像はMatt Zeiler氏の[素晴らしい論文]（https://cs.nyu.edu/~fergus/papers/zeilerECCV2014.pdf）によるものです。彼は今非常に成功しているコンピュータビジョンのスタートアップであるClarifyのCEOで、PhDのRob Fergus氏のスーパーバイザーです。彼らは畳み込みニューラルネットワークの層を視覚化する方法について論文を書きました。畳み込みニューラルネットワークは、レイヤーの数学的な考え方については今後学びますが、基本的な考え方は、赤・緑・青のピクセル値が0から255までの値に簡単な計算でなるということです（最初の層のように）。そしてそこから出てきた結果は2番目の層に入り、さらにその結果は3番目、4番目の層に入っていきます。1000層ものニューラルネットワークにすることができます。 ResNet34には34のレイヤーがあり、ResNet50には50のレイヤーがありますが、しかしレイヤー1を確認してみましょう。あなたはこれが何か知っていれば非常に単純な畳み込みの計算ができます。この最初の層から何が出力されるか？ええ、これらの特定の係数やパラメータは、画像として実際に視覚化することができます。最初のレイヤーには実際には数十個のものがあるので、そのすべてを描画するわけではありません。ランダムに9個確認してみましょう。
 
 
 [[1:17:45](https://youtu.be/BWWm4AzsdLk?t=4665)]
@@ -937,7 +937,7 @@ These pictures come from [a fantastic paper](https://cs.nyu.edu/~fergus/papers/z
 
 Here are nine examples of the actual coefficients from the first layer. So these operate on groups of pixels that are next to each other. So this first one basically finds groups of pixels that have a little diagonal line, the second one finds diagonal line in the other direction, the third one finds gradients that go from yellow to blue, and so forth. They are very simple little filters. That's layer one of ImageNet pre-trained convolutional neural net. 
 
-これは、最初のレイヤの実際の係数の9つの例です。 そのため、これらは互いに隣接するピクセルのグループに作用します。 つまり、この最初のものは基本的に小さな対角線を持つピクセルのグループを見つけ、2番目のものは反対方向の対角線を見つけ、3番目のものは黄色から青に向かう勾配を見つけます。 彼らは非常にシンプルな小さなフィルターです。 これはImageNetの事前に訓練された畳み込みニューラルネットの1つです。
+これは最初のレイヤーが持つ9つの係数の例です。そしてこれらは互いに隣接するピクセルのグループに影響します。 つまり、この最初のものは基本的に小さな対角線を持つピクセルのグループを見つけ、2番目のものはその対称となる対角線を見つけ、3番目のものは黄色から青に変わる勾配を見つけます、4番目も同様です。これらは非常にシンプルな小さなフィルターです。 これはImageNetの事前に訓練された畳み込みニューラルネットの1つです。
 
 ![](lesson1/125.png)
 
@@ -953,42 +953,42 @@ So this is the kind of stuff you've got to get a really good intuitive understan
 
 Now we can find repeating pattern of two dimensional objects or we can find things that joins together, or bits of text (although sometimes windows) - so it seems to find repeated horizontal patterns. There are also ones that seem to find edges of fluffy or flowery things or geometric patterns. So layer 3 was able to take all the stuff from layer 2 and combine them together.
 
-これで、2次元オブジェクトの繰り返しパターンを見つけることができます。あるいは、結合したもの、またはテキストの一部（場合によってはウィンドウもあります）を見つけることができます。 ふわふわや花のようなものや幾何学模様の端を見つけるように見えるものもあります。 そのため、レイヤ3はレイヤ2からすべてのものを取り出してそれらを組み合わせることができました。
+これで、2次元オブジェクトの繰り返しパターンを見つけたり、もしくは結合したものやテキストの一部（ウィンドウの場合もある）を見つけることができます。水平線のパターンが繰り返されているように見えるものもあります。ふわふわとしたものや花のようなものや幾何学模様のようなものに見えるものもあります。なので、レイヤ3はレイヤ2からそれらすべてのものを取り出して組み合わせることができました。
 
 ![](lesson1/127.png)
 
 Layer 4 can take all the stuff from layer 3 and combine them together. By layer 4, we got something that can find dog faces or bird legs. 
 
-レイヤ4はレイヤ3からすべてのものを取り出してそれらを結合することができます。 レイヤー4までに、犬の顔や鳥の足を見つけることができるものがありました。
+レイヤ4はレイヤ3からすべてのものを取り出して組み合わせることができます。 レイヤー4まででに、犬の顔や鳥の足を確認できます。
 
 By layer 5, we've got something that can find the eyeballs of bird and lizards, or faces of particular breeds of dogs and so forth. So you can see how by the time you get to layer 34, you can find specific dog breeds and cat breeds. This is kind of how it works.
 
-レイヤ5までに、鳥やトカゲの眼球、あるいは特定の犬種の顔などを見つけることができるものがあります。 それで、あなたがどのようにあなたが層34に着く時までに、あなたが特定の犬種と猫種を見つけることができるかについて見ることができます。 これは一種の仕組みです。
+レイヤ5までに、鳥やトカゲの目、または特定の犬種の顔などを確認できます。 そしてレイヤー34にたどりつく頃には、特定の犬種と猫種を確認することができます。 これが一つの仕組みです。
 
 So when we first trained (i.e. fine-tuned) the pre-trained model, we kept all of these layers that you've seen so far and we just trained a few more layers on top of all of those sophisticated features that are already being created. So now we are going back and saying "let's change all of these". We will start with where they are, but let's see if we can make them better. 
 
-そのため、事前に訓練されたモデルを最初に訓練（つまり微調整）したときには、これまで見てきたこれらのレイヤーすべてを保持し、すでにいくつかの高度な機能の上にさらにいくつかのレイヤーを訓練しました。 作成した。 だから今、私たちは戻って「これらすべてを変えよう」と言っています。 それらがどこにあるかから始めましょうが、それらをより良くすることができるかどうか見てみましょう。
+なので、事前に訓練されたモデルを最初に訓練（微調整など）したときには、これまで確認したレイヤーすべてを維持し、この洗練された性能の上に作成したいくつかのレイヤーを訓練しました。今私たちは戻って「これらすべてを変えよう」と言っているのです。ここにあるものから始めて、しかしそれらをより良くできるのかどうかを確認しましょう。
 
 Now, it seems very unlikely that we can make layer 1 features better. It's very unlikely that the definition of a diagonal line is going to be different when we look at dog and cat breeds versus the ImageNet data that this was originally trained on. So we don't really want to change the layer 1 very much if at all. Or else, the last layers, like types of dog face seems very likely that we do want to change that. So you want this intuition, this understanding that the different layers of a neural network represents different level of semantic complexity. 
 
-現在、レイヤ1の機能を向上させることはほとんど不可能です。 対角線の定義が犬と猫の品種とImageNetのデータとを比較したときに異なることはまずありません。 そのため、レイヤ1を変更したくはありません。 そうでなければ、最後の層は、犬の顔の種類のように、私たちがそれを変えたいと思う可能性が非常に高いようです。 それで、あなたはこの直観が欲しいです、ニューラルネットワークの異なった層が異なったレベルの意味の複雑さを表すというこの理解。
+現在、レイヤ1の性能を向上させることはほとんど不可能です。 対角線の定義が訓練されたオリジナルのImagenetのデータと、犬と猫の品種を比較したときに異なることはまずありません。だからレイヤ1を変更したくはありません。 一方最後のレイヤーは犬の顔の種類のように見え、私たちがそれを変更したいと思う可能性が非常に高いでしょう。あなたはニューラルネットワークの異なったレイヤーが異なったレベルの複雑な意味を表すということを理解する感覚が欲しいです。
 
 [[1:22:06](https://youtu.be/BWWm4AzsdLk?t=4926)]
 
 This is why our attempt to fine-tune this model didn't work because by default, it trains all the layers at the same speed which is to say it will update those things representing diagonal lines and gradients just as much as it tries to update the things that represent the exact specifics of what an eyeball looks like, so we have to change that. 
 
-このモデルを微調整しようとする試みがうまくいかなかったのはこのためです。デフォルトでは、更新しようとするのと同じぐらい斜めの線とグラデーションを表すものが更新されるということです。 眼球がどのように見えるかの正確な詳細を表すものなので、それを変更する必要があります。
+このモデルを微調整しようとしてうまくいかなかったのはこのせいです。デフォルトでは、訓練では眼球がどのように識別されるのかと同じぐらい対角線やグラデーションを表すものが変更されてしまいます。それを変える必要があります。
 
 To change it, we first of all need to go back to where we were before. We just broke this model, much worse than it started out. So if we just go:
 
-それを変えるためには、まず私たちは以前の場所に戻る必要があります。 私たちはこのモデルを壊したばかりです。 だから私たちはちょうど行くなら：
+これを変えるためには、まず私たちは以前の状態に戻る必要があります。 私たちはこのモデルを壊したばかりです。そこにちょうど戻るなら：
 
 ```python
 learn.load('stage-1')
 ```
 This brings back the model that we saved earlier. So let's load that back up and now our models back to where it was before we killed it.
 
-これにより、以前に保存したモデルが取り戻されます。 それではそれをバックアップして、今度はモデルを殺す前の状態に戻しましょう。
+これで以前保存したモデルを取り戻せます。ではこれをバックアップして、モデルを壊す前の状態に戻しましょう。
 
 ### Learning rate finder [[1:22:58](https://youtu.be/BWWm4AzsdLk?t=4978)]
 
