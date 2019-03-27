@@ -994,8 +994,7 @@ This brings back the model that we saved earlier. So let's load that back up and
 
 Let's run learning rate finder. We are learning about what that is next week, but for now, just know this is the thing that figures out what is the fastest I can train this neural network at without making it zip off the rails and get blown apart. 
 
-学習料金検索を実行しましょう。 私たちは来週のことについて学んでいますが、今のところ、このニューラルネットワークをレールから切り離してバラバラにさせずに訓練できる最速のものを見つけ出したのはこれだけです。
-
+学習率ファインダーを実行しましょう。私たちは来週の内容を学んでいますが、今はこれをニューラルネットワークのレールからバラバラにならずに最も早く訓練する方法だと考えてください。
 
 ```python
 learn.lr_find()
@@ -1005,7 +1004,7 @@ learn.recorder.plot()
 
 This will plot the result of our LR finder and what this basically shows you is this key parameter called a learning rate. The learning rate basically says how quickly am I updating the parameters in my model. The x-axis one here shows me what happens as I increase the learning rate. The y axis show what the loss is. So you can see, once the learning rate gets passed 10^-4, my loss gets worse. It actually so happens, in fact I can check this if I press <kbd>shift</kbd>+<kbd>tab</kbd> here, my learning defaults to 0.003. So you can see why our loss got worse. Because we are trying to fine-tune things now, we can't use such a high learning rate. So based on the learning rate finder, I tried to pick something well before it started getting worse. So I decided to pick `1e-6`. But there's no point training all the layers at that rate, because we know that the later layers worked just fine before when we were training much more quickly. So what we can actually do is we can pass a range of learning rates to `learn.fit_one_cycle`. And we do it like this:
 
-これは私達のLRファインダーの結果とこれが基本的にあなたに示しているのは学習率と呼ばれるこの重要なパラメーターであることをプロットするでしょう。基本的に、学習率は、モデル内のパラメーターを更新する速度を表します。ここのx軸は学習率を上げるとどうなるかを示しています。 y軸は損失の大きさを表します。ですから、学習率が10 ^ -4を過ぎると、私の損失はさらに悪化します。実際にそうなります。実際、ここで<kbd> shift </kbd> + <kbd> tab </kbd>を押すとこれを確認できます。学習のデフォルトは0.003です。だから私たちの損失が悪化した理由を見ることができます。我々は現在物事を微調整しようとしているので、我々はそのような高い学習率を使うことができません。それで、学習率ファインダーに基づいて、それが悪化し始める前に私は何かをうまく選択しようとしました。それで私は `1e-6`を選ぶことにしました。しかし、その速さですべてのレイヤーをトレーニングするのは意味がありません。ですから実際にできることは、 `learn.fit_one_cycle`にさまざまな学習率を渡すことができるということです。そして私達はこれをこうします
+これはLRファインダーという、学習率と呼ばれる大事なパラメータの結果をプロットします。学習率は基本的にモデルをどのくらい早く訓練するかを言います。このX軸は学習率の増加を示しています。Y軸は損失の大きさを示しています。つまり、学習率が10 ^ -4を過ぎると損失は非常に悪化します。実際にそうなります。実際、ここで<kbd> shift </kbd> + <kbd> tab </kbd>を押してこのことを確認できます。ここでの学習率のデフォルトは0.003です。これが損失が悪化した理由です。今はこれを微調整しようとしているので、このような高い学習率は使えません。そこで学習率ファインダーに基づき、これが悪化し始める前のものを選択しようとします。そこで私は `1e-6`を選ぶことにしました。しかし、この速度ですべてのレイヤーをトレーニングすることには意味がない。なので実際には、 `learn.fit_one_cycle`にさまざまな学習率を渡します。このように：
 
 ```python
 learn.unfreeze()
@@ -1020,29 +1019,30 @@ epoch  train_loss  valid_loss  error_rate
 
 You use this keyword in Python called `slice` and that can take a start value and a stop value and basically what this says is train the very first layers at a learning rate of 1e-6, and the very last layers at a rate of 1e-4, and distribute all the other layers across that (i.e. between those two values equally). 
 
-このキーワードはPythonで `slice`と呼ばれて使用され、それは開始値と終了値をとることができ、基本的にこれが言うことは1e-6の学習率で一番最初の層を訓練することです。 １ｅ − ４、そしてそれを横切って（すなわちこれら２つの値の間で等しく）他の全ての層を分配する。
+Pythonで`slice`と呼ばれるキーワードを使用すると開始時の値と終了時の値を取得できます、これらが基本的に示しているのは1e-6の学習率で一番最初のレイヤーを訓練すること、 最後のレイヤーは1e-4,で、かつ他の全てのレイヤーはこれらの値を（例えば2つの値の平均などで）分配します。
+
 
 ### How to pick learning rates after unfreezing [[1:25:23](https://youtu.be/BWWm4AzsdLk?t=5123)]
 
 A good rule of thumb is after you unfreeze (i.e. train the whole thing), pass a max learning rate parameter, pass it a slice, make the second part of that slice about 10 times smaller than your first stage. Our first stage defaulted to about 1e-3 so it's about 1e-4. And the first part of the slice should be a value from your learning rate finder which is well before things started getting worse. So you can see things are starting to get worse maybe about here:
 
-大体の目安は、フリーズを解除した後（つまり全体をトレーニングした後）、最大学習率パラメーターを渡してスライスに渡し、そのスライスの2番目の部分を最初の段階の約10分の1にすることです。 私たちの最初のステージはデフォルトで約1e-3だったので、それは約1e-4です。 そして、スライスの最初の部分は、事態が悪化し始めるかなり前に、学習率ファインダーからの値であるべきです。 ですから、ここで状況が悪化し始めていることがわかります。
+大まかな目安としては、フリーズを解除したあと（つまり全体をトレーニングした後）、最大の学習率をパラメーターとして渡し、スライスに渡し、このスライスの2番目の部分は最初の段階の約10分の1にすることです。 今回の最初のステージはデフォルトで約1e-3だったので、つまりそれは約1e-4です。 かつこのスライスの最初の部分は、損失が悪化し始めるかなり前の時点で学習率ファインダーの値であるべきです。 なので、ここで結果が悪化していていることがわかります。
 
 ![](lesson1/128.png)
 
 So I picked something that's at least 10 times smaller than that.
 
-だから私はそれよりも少なくとも10倍小さいものを選びました。
+だから私はこれより少なくとも10倍小さいものを選びました。
 
 If I do that, then the error rate gets a bit better. So I would perhaps say for most people most of the time, these two stages are enough to get pretty much a world-class model. You won't win a Kaggle competition, particularly because now a lot of fastai alumni are competing on Kaggle and this is the first thing that they do. But in practice, you'll get something that's about as good in practice as the vast majority of practitioners can do. 
 
-そうすれば、エラー率は少し良くなります。 ですから、ほとんどの人にとっては、この2つの段階でほとんど世界クラスのモデルになるには十分でしょう。 あなたはKaggleコンテストに勝つことはできません、特に今やfastaiの卒業生の多くがKaggleで競っています、そしてこれが彼らがする最初のことです。 しかし、実際には、実務者の大多数ができることと同じくらい実務に適したものが得られます。
+そうすることでエラー率は少し良くなります。なのでほとんどの人にとってはこの2つのステップで十分世界クラスのモデルとなるには十分です。でもfastaiのたくさんの卒業生がKaggleで競っているので、あなたはKaggleコンテストに勝つことはできません、でもこれが彼らがしてきた最初のことなのです。 一方で実際には、専門家の大多数がやれることと同じくらい、実務に使えるものが手に入れられています。
 
 ## ResNet50 [[1:26:55](https://youtu.be/BWWm4AzsdLk?t=5215)]
 
 We can improve it by using more layers and we will do this next week but by basically doing a ResNet50 instead of ResNet34. And you can try running this during the week if you want to. You'll see it's exactly the same as before, but I'm using ResNet50. 
 
-私たちはもっと多くの層を使うことでそれを改善することができます、そして私たちは来週それを行いますが、基本的にResNet34の代わりにResNet50をすることによって。 あなたが望むなら、あなたは週の間にこれを実行してみることができます。 それは以前と全く同じですが、私はResNet50を使っています。
+もっと多くのレイヤーを利用することでこれを改善できます、そのことは来週行いますが、基本的にResNet34の代わりにResNet50をやります。気になるなら来週までの授業の間にこれを実行することができます。以前と全く同じですが、しかし私はResNet50を使います。
 
 ```python
 
@@ -1057,7 +1057,7 @@ learn = ConvLearner(data, models.resnet50, metrics=error_rate)
 
 What you'll find is it's very likely if you try to do this, you will get an error and the error will be your GPU has ran out of memory. The reason for that is that ResNet50 is bigger than ResNet34, and therefore, it has more parameters and use more of your graphics card memory, just totally separate to your normal computer RAM, this is GPU RAM. If you're using the default Salamander,  AWS, then you'll be having a 16G of GPU memory. The card I use most of the time has 11G GPU memory, the cheaper ones have 8G. That's kind of the main range you tend to get. If yours have less than 8G of GPU memory, it's going to be frustrating for you. 
 
-あなたがこれをやろうとするならば、あなたが見つけることは非常にありそうです、あなたはエラーを得るでしょう、そしてエラーはあなたのGPUがメモリを使い果たしたということです。 その理由は、ResNet50がResNet34よりも大きいため、通常のコンピューターのRAMとはまったく別の、より多くのパラメーターを持ち、グラフィックカードのメモリを多く使用するためです。これはGPU RAMです。 デフォルトのSalamander（AWS）を使用している場合は、16GのGPUメモリがあります。 私が最もよく使うカードは11G GPUメモリを持っています、安いものは8Gを持っています。 それはあなたが得がちなメインレンジの一種です。 あなたのGPUメモリが8G以下の場合、それはあなたにとってイライラすることになるでしょう。
+もしこれをやろうとするなら、いろいろな発見があるでしょう。あなたはエラーに遭遇するでしょう、どれはGPUがメモリを使い果たしたというエラーです。その理由はResnet５０がResnet34より大きく、そのために通常のコンピュータのRAMとは全く別の、更に性能のよいグラフィックカードを使います、GPURAMというものです。デフォルトのAWSのSalamanderを使用している場合は、16GのGPUメモリがあります。 私が最もよく使うカードは11GのGPUメモリがあります、安いものなら8Gのメモリです。これがあなたが手に入れられる主な範囲でしょう。あなたのGPUメモリが8G以下の場合はイライラの原因になります。
 
 It's very likely that if you try to run this, you'll get an out of memory error and that's because it's just trying to do too much - too many parameter updates for the amount of RAM you have. That's easily fixed. `ImageDataBunch` constructor has a parameter at the end `bs` - a batch size. This basically says how many images do you train at one time. If you run out of memory, just make it smaller.
 
