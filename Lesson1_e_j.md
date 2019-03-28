@@ -1061,11 +1061,11 @@ What you'll find is it's very likely if you try to do this, you will get an erro
 
 It's very likely that if you try to run this, you'll get an out of memory error and that's because it's just trying to do too much - too many parameter updates for the amount of RAM you have. That's easily fixed. `ImageDataBunch` constructor has a parameter at the end `bs` - a batch size. This basically says how many images do you train at one time. If you run out of memory, just make it smaller.
 
-これを実行しようとすると、メモリ不足エラーが発生する可能性があります。これは、実行しようとしているRAMの量に対してパラメータ更新が多すぎるためです。 それは簡単に修正できます。 `ImageDataBunch`コンストラクタは、最後に` bs`パラメータを持っています - バッチサイズ。 これは基本的にあなたが一度にいくつの画像を訓練しているかを言います。 メモリが足りなくなった場合は、小さくしてください。
+これを実行するならエラーに出会う可能性が高い、なぜならRAMの量に比べてパラメータ更新が多すぎるためです。これは簡単に修正できます。`ImageDataBunch`コンストラクタは、最後に` bs` - バッチサイズのパラメータがあるます。 これは基本的に一度に何個の画像を訓練しているかを指示します。 メモリが足りなくなった場合は、これを小さくしてください。
 
 It's fine to use a smaller bath size. It might take a little bit longer. That's all. So that's just one number you'll need to try during the week. 
 
-もっと小さいバスサイズを使うのもいいでしょう。 もう少し時間がかかるかもしれません。 それで全部です。 だからそれはあなたが今週中に試す必要があるただ一つの数です。
+もっと小さいバスサイズを使うのもいいでしょう。 もう少し時間がかかるようになるかもしれません。 これが全部です。なのでこれはあなたが今週中に試してみるべきただ一つの数字です。
 
 ```python
 learn.fit_one_cycle(8, max_lr=slice(1e-3))
@@ -1085,7 +1085,7 @@ epoch  train_loss  valid_loss  error_rate
 
 Again, we fit it for a while and we get down to 4.2% error rage. So this is pretty extraordinary. I was pretty surprised because when we first did in the first course, this cats vs. dogs, we were getting somewhere around 3% error for something where you've got a 50% chance of being right and the two things look totally different. So the fact that we can get 4.2% error for such a fine grain thing, it's quite extraordinary. 
 
-繰り返しますが、しばらくの間それを当てはめて、4.2％のエラー率に下がります。 だからこれはかなり特別です。 私たちが最初のコースで最初にやったとき、この猫対犬、あなたが正しいことの50％のチャンスを持っているものと2つの事が全く異なるように見える何かのためのどこかに3％の誤差を得ていたので私はかなり驚きました。 それで、このような細かいことで4.2％の誤差を得ることができるという事実は、非常に異常なことです。
+繰り返すと、これを適用することで、エラー率が4.2％に下がります。 これはかなり特別です。 最初のコースではこの犬対猫はまったくことなる２つの50%のチャンスで正しくなるものが3%の誤差に収まったので非常に驚きました。このような微調整で4.2％のエラー率に収まるという事実は、非常に特別なことなのです。
 
 ### Interpreting the results again [1:29:41](https://youtu.be/BWWm4AzsdLk?t=5381)
 結果をもう一度解釈する
@@ -1104,19 +1104,20 @@ interp.most_confused(min_val=2)
 
 You can call the most_confused here and you can see the kinds of things that it's getting wrong. Depending on when you run it, you're going to get slightly different numbers, but you'll get roughly the same kind of things. So quite often, I find the Ragdoll and Birman are things that it gets confused. I actually have never heard of either of those things, so I actually looked them up and found a page on the cat site called "Is this a Birman or Ragdoll kitten?" and there was a long thread of cat experts arguing intensely about which it is. So I feel fine that my computer had problems.   
 
-most_confusedをここで呼び出すことができ、それが間違っていることの種類のものを見ることができます。 実行する時期によっては、わずかに異なる数になりますが、ほぼ同じ種類のものになります。 非常に頻繁に、私はRagdollとBirmanが混乱してしまうものだと思います。 私は実際にこれらのことのどちらについても聞いたことがないので、私は実際にそれらを調べて、「これはBirmanまたはRagdollの子猫ですか？」という猫のサイト上のページを見つけました。 そしてそれがどれであるかについて激しく議論している猫の専門家の長いスレッドがありました。 それで私は私のコンピュータに問題があったことを元気にします。
+most_confusedをここで呼び出すと、間違えた種類のものを確認できます。実行タイミングによっては、微妙に異なる数になりますが、しかしほぼ同じ種類のものでしょう。RagdollとBirmanは非常によく間違われるものだと思います。私はこの二種類の犬をどちらも実際に聞き及んだことはないので、調べてみたところ「これはRagdollとBirmanのどちらですか？」という猫に関するサイトを見つけ、それがどちらであるか専門家が激しく議論している長いスレッドがありました。なので私のコンピュータに問題があったのはいいことですね。
+
 
 ![](lesson1/129.png)
 
 I found something similar, I think it was this pitbull versus staffordshire bull terrier, apparently the main difference is the particular kennel club guidelines as to how they are assessed. But some people thing that one of them might have a slightly redder nose. So this is the kind of stuff where actually even if you're not a domain expert, it helps you become one. Because I now know more about which kinds of pet breeds are hard to identify than I used to. So model interpretation works both ways. 
 
-私は似たようなものを見つけた、私はそれがこのピットブル対スタッフォードシャーブルテリアだったと思う、明らかに主な違いはそれらがどのように評価されるかに関する特定の犬小屋クラブのガイドラインである。 しかし、何人かの人々はそれらのうちの1つがわずかにより赤い鼻を持つかもしれないと思います。 ですから、これは、たとえあなたがドメインエキスパートでなくても、あなたが一つになるのに役立ちます。 私は今、私が今までよりもどの種類のペットの種類を識別するのが難しいのかについてもっと知っているからです。 そのため、モデル解釈は両方の方法で機能します。
+似たようなものを見つけました、確かpitbull対staffordshire bull terrierだったと思います。主な明白な違いは特定の専門家のガイドラインによる評価方法です。しかし、何人かの人々はそのうちの1つでわずかに赤い鼻を持つっていると考えています。なのでこれはあなたが専門家でなくともこの中の一人になれることに十分役立ちます。私は今これらの品種のペットが識別することが非常に難しいことをこれを使って知っています。なので、モデルの解釈は両方の道で働きます。
 
 ## Homework [[1:30:58](https://youtu.be/BWWm4AzsdLk?t=5458)]
 
 So what I want you to do this week is to run this notebook, make sure you can get through it, but then I really want you to do is to get your own image dataset and actually Francisco is putting together a guide that will show you how to download data from Google Images so you can create your own dataset to play with. But before I do, I want to show you how to create labels in lots of different ways because your dataset where you get it from won't necessarily be that kind of regex based approach. It could be in lots of different formats. So to show you how to do this, I'm going to use the MNIST sample. MNIST is a picture of hand drawn numbers - just because I want to show you different ways of creating these datasets. 
 
-それで、今週あなたにしてもらいたいことはこのノートブックを実行することです、そしてあなたがそれを通り抜けることができることを確かめます、しかしそれから私はあなたがあなた自身の画像データセットを得ることです あなたが遊ぶためにあなた自身のデータセットを作成することができるように、Google Imagesからデータをダウンロードする方法。 しかし、それを取得する元のデータセットは必ずしもそのような正規表現ベースのアプローチではないため、さまざまな方法でラベルを作成する方法を説明します。 それはたくさんの異なったフォーマットになるでしょう。 その方法を説明するために、MNISTサンプルを使用します。 MNISTは手書きの数字の写真です - これらのデータセットを作成するさまざまな方法をあなたに示したいからです。
+今週中にしてほしいことはこのノートブックを実行し、それが想定通りにできることを確認することです、けれども本当にしてほしいことはあなた自身の画像データセットでです、実際にFrancisco はGoogleImageからデータセットをダウンロードしてこれを遊ぶ方法を書きました。けれどここで取得したものは必ずしも正規表現ベースのものではないため、ラベルを作成するさまざまな方法を示します。それは様々に異なったフォーマットでしょう。それを説明するためにMNISTサンプルを使います。MNISTは手書きの数字画像です - なぜならこのデータセットから作成する様々な方法を示したいからです。
 
 ```python
 path = untar_data(URLs.MNIST_SAMPLE); path
@@ -1131,7 +1132,7 @@ path.ls()
 
 You see there are a training set and the validation set already. So basically the people that put together this dataset have already decided what they want you to use as a validation set. 
 
-トレーニングセットとバリデーションセットがすでにあることがわかります。 したがって、基本的にこのデータセットをまとめた人々は、検証セットとして使用したいものをすでに決めています。
+訓練セットと評価セットが既に用意されていることがわかります。なので基本的にこのデータセットをまとめた人たちは、検証セットとして使ってほしいものを既に決めています。
 
 ### Scenario 1: Labels are folder names
 ラベルはフォルダ名です
@@ -1145,7 +1146,7 @@ You see there are a training set and the validation set already. So basically th
 
 There are a folder called 3 and a folder called 7. Now this is really common way to give people labels. Basically it says everything that's a three, I put in a folder called three. Everything that's a seven, I'll put in a folder called seven. This is often called an "ImageNet style dataset" because this is how ImageNet is distributed. So if you have something in this format where the labels are just whatever the folders are called, you can say `from_folder`.
 
-3という名前のフォルダと7という名前のフォルダがあります。これが、人々にラベルを付けるための本当に一般的な方法です。 基本的にそれは3つすべてのことを言っています、私は3と呼ばれるフォルダーに入れました。 7つすべてです、私はsevenという名前のフォルダーに入れます。 これはImageNetの配布方法であるため、「ImageNetスタイルのデータセット」と呼ばれることがよくあります。 そのため、ラベルがちょうどフォルダが呼ばれるものであるこのフォーマットの何かを持っているなら、あなたは `from_folder`を言うことができます。
+ここに3という名前のフォルダと7という名前のフォルダがあります。これが、人々にラベルを付けるためのごく一般的な方法です。 基本的にこれはすべて3であることを示すので、私は3と呼ばれるフォルダーに入れました。 7とつくもの全ては、7という名前のフォルダーに入れます。 これはImageNetの配布方法でもあるため、「ImageNetスタイルのデータセット」とよく呼ばれます。もしあなたがこの形式でフォルダにラベルを持つものがあるなら `from_folder`呼びましょう。
 
 ```python
 tfms = get_transforms(do_flip=False)
@@ -1154,7 +1155,7 @@ data = ImageDataBunch.from_folder(path, ds_tfms=tfms, size=26)
 
 This will create an ImageDataBunch for you and as you can see it created the labels:
 
-これはあなたのためにImageDataBunchを作成し、あなたがそれを見ることができるのを見ることができるようにラベルを作成しました：
+これはImageDataBunchを作成し、中身を確認できるようにラベルを作成しました：
 
 ```python
 data.show_batch(rows=3, figsize=(5,5))
@@ -1166,7 +1167,7 @@ data.show_batch(rows=3, figsize=(5,5))
 
 Another possibility, and for this MNIST sample, I've got both, it might come with a CSV file that would look something like this.
 
-もう1つの可能性、そしてこのMNISTサンプルの場合、両方ともありますが、CSVファイルが付属しているかもしれません。
+他の可能性としては、このMNISTサンプルの場合、両方共に、何らかのCSVファイルが付属しているかもしれません。
 
 ```python
 df = pd.read_csv(path/'labels.csv')
@@ -1177,7 +1178,7 @@ df.head()
 
 For each file name, what's its label. In this case, labels are not three or seven, they are 0 or 1 which basically is it a 7 or not. So that's another possibility. If this is how your labels are, you can use `from_csv`:
 
-各ファイル名について、そのラベルは何ですか。 この場合、ラベルは3または7ではなく、0または1で、基本的には7です。 だからそれは別の可能性です。 ラベルがこのようなものであれば、 `from_csv`を使えます
+各ファイル名のラベルは何ですか。 この場合、ラベルは3または7ではなく、0または1で、基本的には7もしくはそれ以外です。なのでこれは別の可能性です。このようなラベルであれば、 `from_csv`が使えます。
 
 ```python
 data = ImageDataBunch.from_csv(path, ds_tfms=tfms, size=28)
@@ -1200,6 +1201,7 @@ data.classes
 
 
 ### Scenario 3: Using regular expression
+正規表現を使う
 
 ```python
 fn_paths = [path/name for name in df['name']]; fn_paths[:2]
@@ -1211,7 +1213,8 @@ fn_paths = [path/name for name in df['name']]; fn_paths[:2]
 ```
 
 This is the same thing, these are the folders. But I could actually grab the label by using a regular expression. We've already seen this approach:
-これは同じことです、これらはフォルダです。 しかし、正規表現を使って実際にラベルをつかむことができました。 私たちはすでにこのアプローチを見ました：
+
+これらは同じことです、これらはフォルダです。しかし正規表現を利用してラベルを取得することができました。私たちはすでにこのアプローチを見ています：
 
 
 ```python
@@ -1231,7 +1234,7 @@ data.classes
 
 You can create an arbitrary function that extracts a label from the file name or path. In that case, you would say `from_name_func`:
 
-ファイル名またはパスからラベルを抽出する任意の関数を作成できます。 その場合、 `from_name_func`と言うでしょう。
+ファイル名またはパスからラベルを抽出する任意の関数を作成できます。 その場合、 `from_name_func`を使うでしょう。
 
 ```python
 data = ImageDataBunch.from_name_func(path, fn_paths, ds_tfms=tfms, size=24,
@@ -1242,11 +1245,11 @@ data.classes
 
 
 ### Scenario 5: You need something even more flexible
-もっと柔軟なものが必要です
+もっと柔軟なものが必要なとき
 
 If you need something even more flexible than that, you're going to write some code to create an array of labels. So in that case, you can just use `from_lists` and pass in the array.
 
-それ以上の柔軟性が必要な場合は、ラベルの配列を作成するためのコードを書くことになります。 だからその場合は、 `from_lists`を使って配列を渡すことができます。
+それ以上の柔軟性が必要な場合は、ラベルの配列を作成するためのコードを書くことになります。 その場合は、 `from_lists`を使って配列を渡すことができます。
 
 ```python
 labels = [('3' if '/3/' in str(x) else '7') for x in fn_paths]
@@ -1260,11 +1263,11 @@ data.classes
 
 So you can see there's lots of different ways of creating labels. So during the week, try this out.
 
-ラベルを作成する方法はたくさんあります。 だから今週中に、これを試してみてください。
+ラベルを作成する方法はたくさんあります。 なので今週中に、これを試してみてください。
 
 Now you might be wondering how would you know to do all these things? Where am I going to find this kind of information? So I'll show you something incredibly cool. You know how to get documentation:
 
-今、あなたはあなたがこれらすべてのことをするためにどのように知っているだろうかと疑問に思うかもしれませんか？ この種の情報はどこで入手できますか？ だから私はあなたに信じられないほどクールな何かをお見せします。 ドキュメントを入手する方法を知っています。
+あなたはこれら全てのことをするのにどのように知ることができるのだろうかと疑問に思うでしょうか？これらの情報はどこで手に入るか？私は信じられないほどクールなものをあなたにお見せします。あなたはドキュメントを入手する方法を知っています。
 
 ```python
 doc(ImageDataBunch.from_name_re)
