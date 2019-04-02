@@ -1178,7 +1178,7 @@ df.head()
 
 For each file name, what's its label. In this case, labels are not three or seven, they are 0 or 1 which basically is it a 7 or not. So that's another possibility. If this is how your labels are, you can use `from_csv`:
 
-各ファイル名のラベルは何ですか。 この場合、ラベルは3または7ではなく、0または1で、基本的には7もしくはそれ以外です。なのでこれは別の可能性です。このようなラベルであれば、 `from_csv`が使えます。
+各ファイル名のラベルは何か。 この場合では、ラベルは3または7ではなく、0または1で、基本的には7もしくはそれ以外です。なのでこれは別の可能性です。このようなラベルであれば、 `from_csv`が使えます。
 
 ```python
 data = ImageDataBunch.from_csv(path, ds_tfms=tfms, size=28)
@@ -1214,7 +1214,7 @@ fn_paths = [path/name for name in df['name']]; fn_paths[:2]
 
 This is the same thing, these are the folders. But I could actually grab the label by using a regular expression. We've already seen this approach:
 
-これらは同じことです、これらはフォルダです。しかし正規表現を利用してラベルを取得することができました。私たちはすでにこのアプローチを見ています：
+これらは同じことで、これらはフォルダです。けれど正規表現を利用してラベルを取得することができました。私たちはすでにこのアプローチを見ています：
 
 
 ```python
@@ -1267,7 +1267,7 @@ So you can see there's lots of different ways of creating labels. So during the 
 
 Now you might be wondering how would you know to do all these things? Where am I going to find this kind of information? So I'll show you something incredibly cool. You know how to get documentation:
 
-あなたはこれら全てのことをするのにどのように知ることができるのだろうかと疑問に思うでしょうか？これらの情報はどこで手に入るか？私は信じられないほどクールなものをあなたにお見せします。あなたはドキュメントを入手する方法を知っています。
+あなたはこれら全てのことを行うことをどうやって知ることができるのだろうかと疑問に思うでしょうか？これらの情報はどこで手に入るか？私は信じられないほどクールなものをあなたにお見せします。あなたはドキュメントを入手する方法を知っています。
 
 ```python
 doc(ImageDataBunch.from_name_re)
@@ -1283,15 +1283,16 @@ doc(ImageDataBunch.from_name_re)
 
 Every single line of code I just showed you, I took it this morning and I copied and pasted it from the documentation. So you can see here the exact code that I just used. So the documentation for fastai doesn't just tell you what to do, but step to step how to do it. And here is perhaps the coolest bit. If you go to [fastai/fastai_docs](https://github.com/fastai/fastai_docs) and click on [docs/src](https://github.com/fastai/fastai_docs/tree/master/docs_src).
 
-私が今示したコードの1行ごとに、今朝それを取り、ドキュメントからコピーして貼り付けました。 それで、あなたはここで私がちょうど使った正確なコードを見ることができます。 それで、fastaiのドキュメンテーションはただあなたに何をすべきかをあなたに言うのではなく、それをする方法をステップバイステップで教えてくれます。 そして、ここがおそらく一番クールなものです。 [fastai / fastai_docs]（https://github.com/fastai/fastai_docs）にアクセスして[docs / src]（https://github.com/fastai/fastai_docs / tree / master / docs_src）をクリックした場合。
+今ここで示したコードの１行ごとを、今朝ドキュメントからコピーして貼り付けました。なので私が今使った正確なコードを確認できます。fastaiのドキュメントはただあなたに何をすべきかを教えるのではなく、どのようにそれが動くか段階を踏んで教えてくれます。おそらくそれが最もクールなものです。[fastai/fastai_docs](https://github.com/fastai/fastai_docs) へ行って [docs/src](https://github.com/fastai/fastai_docs/tree/master/docs_src)をクリックした場合は。
 
 All of our documentation is actually just Jupyter Notebooks. You can git clone this repo and if you run it, you can actually run every single line of the documentation yourself.
 
-私たちのすべてのドキュメントは実際にはJupyter Notebooksです。 このレポジトリをgit cloneすることができますし、実行すれば、実際にはドキュメンテーションの各行を自分で実行することができます。
+この全てのドキュメントは実際にはJupyter Notebooksです。 このレポジトリをgit cloneすることができますし、もし実行すれば、実際にはドキュメントの各行を自分で実行することができます。
 
 This is the kind of the ultimate example to me of experimenting. Anything that you read about in the documentation, nearly everything in the documentation has actual working examples in it with actual datasets that are already sitting in there in the repo for you. So you can actually try every single function in your browser, try seeing what goes in and try seeing what comes out. 
 
-これは私にとって実験的な究極の例です。 あなたがドキュメンテーションの中で読んでいるもの、ドキュメンテーションの中のほとんどすべてはあなたのためのレポの中にすでにそこに座っている実際のデータセットを含む実際の作業例を持っています。 それで、あなたは実際にあなたのブラウザのすべての個々の機能を試してみることができます、入ってくるものを見てみて、出てくるものを見てみてください。
+これは私にとって究極の実験ですす。 ドキュメントの中で読んでいるもの、ドキュメントの中のほとんどすべてはあなたのリポジトリの中で既に実際のデータセットが用意されています。なので個々の機能をブラウザで試すことができるので、この入出力を確認してみてください。
+
 
 
 [[1:37:27](https://youtu.be/BWWm4AzsdLk?t=5847)]
@@ -1301,12 +1302,14 @@ This is the kind of the ultimate example to me of experimenting. Anything that y
 
 The library will use multiple CPUs by default but just one GPU by default. We probably won't be looking at multi GPU until part 2. It's easy to do and you'll find it on the forum, but most people won't be needing to use that now.
 
-ライブラリはデフォルトで複数のCPUを使用しますが、デフォルトでは1つのGPUのみです。 パート2までマルチGPUを検討することはおそらくないでしょう。それは簡単で、フォーラムで見つけることができますが、ほとんどの人は今それを使う必要はないでしょう。
+ライブラリはデフォルトで複数のCPUを使用しますが、デフォルトではGPUは一つのみです。 パート2まではマルチGPUを検討することはおそらくないでしょう。それをすることは簡単で、フォーラムで確認できますが、ほとんどの人は今それを使う必要はないでしょう。
 
 **Question**: Can the library use 3D data such as MRI or CAT scan?
+ライブラリはMRIやCATといった3Dデータも扱えますか？
 
 Yes, it can. ANd there is actually a forum thread about that already. Although that's not as developed as 2D yet but maybe by the time the MOOC is out, it will be.
 
+はい、可能です。そしてそれらは既に実際にフォーラムのスレッドがあります。それはまだ2D画像ほどには発展していませｓんが、このMOOCが出るころにはそうなっているでしょう。
 
 
 ### Splunk Anti-Fraud Software [[1:38:10](https://youtu.be/BWWm4AzsdLk?t=5890)]
@@ -1314,25 +1317,25 @@ Yes, it can. ANd there is actually a forum thread about that already. Although t
 [blog](https://www.splunk.com/blog/2017/04/18/deep-learning-with-splunk-and-tensorflow-for-security-catching-the-fraudster-in-neural-networks-with-behavioral-biometrics.html)
 
 Before I wrap up, I'll just show you an example of the kind of interesting stuff that you can do by doing this kind of exercise. 
+授業を終わる前に、この宿題をすることであなたができるようになるとても面白い例を見せます。
 
 Remember earlier I mentioned that one of our alumni who works at Splunk which is a NASDAQ listed big successful company created this new anti-fraud software. This is actually how he created it as part of a fastai part 1 class project:
 
-私が締めくくる前に、この種の練習をすることによってあなたがすることができる一種の面白いものの例をあなたに示すつもりです。
-
-先ほど覚えておいたのですが、Splunkで働いているNASDAQ上場の大成功企業である同窓生の一人が、この新しい不正防止ソフトウェアを作成しました。 これは実際に彼がfastaiパート1クラスのプロジェクトの一部としてそれを作成した方法です：
+先ほど言及したSplunkで働いているNASDAQ上場の大いに成功した企業で働いている、この講義の卒業生は、この新しい不正防止ソフトウェアを作成しました。これは実際に彼がfastaiのパート1のクラスのプロジェクトで作成したものです：
 
 ![](lesson1/132.jpg)
 
 
 He took the telemetry of users who had Splunk analytics installed and watched their mouse movements and he created pictures of the mouse movements. He converted speed into color and right and left clicks into splotches. He then took the exact code that we saw with an earlier version of the software and trained a CNN in exactly the same way we saw and used that to train his fraud model. So he took something which is not obviously a picture and he turned it into a picture and got these fantastically good results for a piece of fraud analysis software. 
 
-Splunkアナリティクスをインストールしたユーザーのテレメトリを使ってマウスの動きを観察し、マウスの動きの写真を作成しました。 彼はスピードをカラーに、左右のクリックを斑点に変換しました。 それから彼は私達が以前のバージョンのソフトウェアで見た正確なコードを使い、私達が見たのと全く同じ方法でCNNを訓練し、それを使って彼の詐欺モデルを訓練した。 それで彼は明らかに写真ではない何かを取って、そしてそれを写真に変えて、そして詐欺分析ソフトウェアの部分のためにこれらの素晴らしく良い結果を得ました。
+Splunk分析をインストールしたユーザーのテレメトリを使ってマウスの動きを観察し、マウスの動きを示す画像を作成しました。 彼はスピードをカラーに、左右のクリックを斑点に変換しました。 それから彼は私達が以前のバージョンのソフトウェアで教えた正確なコードを使い、私達が見たものと全く同じ方法でCNNを訓練し、それを使って詐欺モデルを訓練しました。 それで彼は明らかに画像ではない何かを取得し、画像に変えて、そして詐欺分析ソフトウェアの一部としｔ素晴らしい成果を得ました。
 
 So it pays to think creatively. So if you are wanting to study sounds, a lot of people that study sounds do it by actually creating a spectrogram image and then sticking that into a ConvNet. So there's a lot of cool stuff you can do with this. 
 
-それで、創造的に考えることは役に立ちます。 あなたが音を勉強したいのであれば、音を勉強している多くの人々は実際にスペクトログラム画像を作成してそれをConvNetに固執することによってそれをします。 だから、これを使ってできることはたくさんあります。
+創造的に考えることは役に立ちます。 あなたが音声について研究したいのであれば、音声を研究している多くの人々は実際にスペクトログラム画像を作成してそれをConvNetに変換することによって研究しています。なのでこれを利用してできることはたくさんあります。
 
 So during the week, get your GPU going, try and use your first notebook, make sure that you can use lesson 1 and work through it. Then see if you can repeat the process on your own dataset. Get on the forum and tell us any little success you had. Any constraints you hit, try it for an hour or two but if you get stuck, please ask. If you are able to successfully build a model with a new dataset, let us know! I will see you next week.
 
-それで、週の間に、あなたのGPUを始めて、あなたの最初のノートブックを試してみて、あなたがレッスン１を使って、そしてそれを通して働くことができることを確認しなさい。 それからあなたがあなた自身のデータセットでプロセスを繰り返すことができるかどうか見てください。 フォーラムに参加して、成功したことを少しでも教えてください。 あなたが打ったどんな制約でも、1〜2時間それを試してください、しかし、あなたが動けなくなるならば、尋ねてください。 新しいデータセットを使用してモデルを正しく作成できたら、ぜひお知らせください。 来週お会いしましょう。
+では集の間にGPUを手に入れて最初のnotebookを試していて、lesson1を通じて動くことを確認してください。それからあなた自身のデータセットで同じことができるかどうかを見てみてください。フォーラムに参加して、上手く行ったことを少しでも教えてください。あなたがどんな問題にあたっても、１〜２時間は試してみてください。しかしどうにもならなくなったら尋ねてみてください。新しいデータセットでモデルを上手く作成できたら、ぜひ教えてください！
+では来週お会いしましょう。
 
