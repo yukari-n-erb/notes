@@ -3,17 +3,18 @@
 [Video](https://youtu.be/Egp4Zajhzog) / [Lesson Forum]((https://forums.fast.ai/t/lesson-2-official-resources-and-updates/28630)) / [General Forum]((https://forums.fast.ai/t/faq-resources-and-official-course-updates/27934/))
 
 ## Deeper Dive into Computer Vision
-コンピュータビジョンへ深く向かう
+コンピュータビジョンを深く知る
 
 Taking a deeper dive into computer vision applications, taking some of the amazing stuff you've all been doing during the week, and going even further.
 
-今週中に皆さんが今までやってきた素晴らしいことのいくつかを取り上げ、さらに進んでいく、コンピュータービジョンアプリケーションについてもっと深く掘り下げること。
+今週中にみなさんが取り組んだ素晴らしいコンピュータビジョンのアプリケーションを取り上げて深堀し、さらに進んでいきます。
+
 
 ### Forum tips and tricks [[0:17]](https://youtu.be/Egp4Zajhzog?t=17)
 フォーラムの知識とトリック
 
 Two important forum topics:
-二つの重要なフォーラムの話題
+フォーラムの二つの重要なトピック
 
 - [FAQ, resources, and official course updates](https://forums.fast.ai/t/faq-resources-and-official-course-updates/27934/)
 
@@ -25,39 +26,39 @@ Two important forum topics:
 
 After just one week, the most popular thread has 1.1k replies which is intimidatingly large number. You shouldn't need to read all of it.  What you should do is click "Summarize This Topic" and it will only show the most liked ones.
 
-たった1週間後、最も人気のあるスレッドは1.1kの返信を寄せられ、非常に大きな数となっています。 全部読む必要はないはずです。 あなたがすべきことは "Summarize This Topic"をクリックすることであり、それは最も好きなものだけを表示するでしょう。
+たった一週間で最も人気のスレッドでは1100件という非常にたくさんの返信がありました。全てを読む必要はないです。あなたがすべきなのは”トピックの要約”を押すことであり、最も好きなものだけを表示してくれます。、それは最も好きなものだけを表示するでしょう。
 
 ![](lesson2/1.png)
 
 ####  Returning to work [[3:19]](https://youtu.be/Egp4Zajhzog?t=199)
-職場に戻る
+課題に戻る
 
 https://course-v3.fast.ai/ now has a "Returning to work" section which will show you (for each specific platform you use):
-https://course-v3.fast.ai/に「職場に戻る」セクションがあり、（あなたが使う特定のプラットフォームごとに）あなたを紹介します：
+https://course-v3.fast.ai/　に「課題に戻る」セクションがあり、利用するプラットフォームごとの紹介があります：
 
 
 - How to make sure you have the latest notebooks
 - How to make sure you have the latest fastai library 
 
  - 最新のノートブックを確実に入手する方法
- - 最新のfastaiライブラリがあることを確認する方法
+ - 最新のfastaiライブラリを確実に入手する方法
  
 If things aren't working for you, if you get into some kind of messy situation, which we all do, just delete your instance and start again unless you've got mission-critical stuff there — it's the easiest way just to get out of a sticky situation.
 
-問題がうまくいかない場合、私たち全員がそうした厄介な状況に陥った場合は、インスタンスを削除して、ミッションクリティカルなものがない限りやり直すだけです。 ねばねばした状況。
+うまく動かない厄介な状況になった場合は、致命的な状況でない限りインスタンスを削除して立ち上げ直すのが簡単な方法です。
 
 ### What people have been doing this week [[4:19]](https://youtu.be/Egp4Zajhzog?t=259)
-今週何をしているのか
+皆が今週何をしていたか
 
 [Share your work here](https://forums.fast.ai/t/share-your-work-here/27676/) 
-宿題をシェアする
+課題をシェアする
 
 ![](lesson2/2.png)
 
 - [Figuring out who is talking — is it Ben Affleck or Joe Rogan](https://forums.fast.ai/t/share-your-work-here/27676/143) 
-- [Cleaning up Watsapp downloaded images folder to get rid of memes](https://forums.fast.ai/t/share-your-work-here/27676/97)
-
-
+- [Cleaning up Watsapp downloaded images folder to get rid of memes](https://forums.fast.ai/t/share-your-work-here/27676/97) 
+- 誰が話していたか - Ben Affleck か Joe Rogan
+- Whatappのダウンロードイメージからミームを取り除くためにクリーンアップする
 
 ![](lesson2/3.png)
 
@@ -65,7 +66,7 @@ If things aren't working for you, if you get into some kind of messy situation, 
 
 One of the really interesting projects was looking at the sound data that was used in [this paper](https://arxiv.org/abs/1608.04363). In this paper, they were trying to figure out what kind of sound things were. They got a state of the art of nearly 80% accuracy. Ethan Sutin then tried using the lesson 1 techniques and got 80.5% accuracy, so I think this is pretty awesome. Best as we know, it's a new state of the art for this problem. Maybe somebody since has published something we haven't found it yet. So take all of these with a slight grain of salt, but I've mentioned them on Twitter and lots of people on Twitter follow me, so if anybody knew that there was a much better approach, I'm sure somebody would have said so.
 
-本当に興味深いプロジェクトの1つは、[この文書]（https://arxiv.org/abs/1608.04363）で使用されているサウンドデータを見ていました。 本稿では、彼らはどのような健全なものがあるのか把握しようとしていました。 彼らは80％近くの精度の最先端技術を手に入れました。 Ethan Sutinはその後、レッスン1のテクニックを使用してみたところ、80.5％の正確さで得られたので、これは非常に素晴らしいと思います。 私たちが知っているように最高の、それはこの問題のための最先端の技術です。 誰かがそれ以来私たちがそれをまだ見つけていない何かを発表したのかもしれません。 だから、私はTwitterでそれらを言及し、Twitterの多くの人々が私をフォローしているので、誰かがもっと良いアプローチがあることを知っていれば、誰かがそう言ったはずだ 。
+本当に興味深いプロジェクトの1つは、[この論文]（https://arxiv.org/abs/1608.04363） で使用されたウンドデータの分析です。この論文では、どんな種類の音が存在しているのか分析しようとしていました。彼らは80％近くの最先端の精度を得ました。 Ethan Sutinはその後、レッスン1のテクニックを使用してみたところ、80.5％の正確さを得られたので、これは非常に素晴らしいと思います。私達が知っていることはこの問題に対する新しい最先端の技術です。もしかしたら誰かが私達の知らない方法を見つけて発表したかもしれません。なら私のTwitterはたくさんの人がフォローしているので、もっと良いアプローチがあれば私にそういってくるので、私はTwitterでそのことに言及したでしょう。
 
 [[6:01](https://youtu.be/Egp4Zajhzog?t=361)]
 
@@ -75,7 +76,8 @@ One of the really interesting projects was looking at the sound data that was us
 
 Suvash has a new state of the art accuracy for Devanagari text recognition. I think he's got it even higher than this now. This is actually confirmed by the person on Twitter who created the dataset. I don't think he had any idea, he just posted here's a nice thing I did and this guy on Twitter said: "Oh, I made that dataset. Congratulations, you've got a new record." So that was pretty cool.
 
-Suvashは、Devanagariテキスト認識のための新しい最先端の精度を持っています。 私は彼が今これ以上にそれを持っていると思います。 これは実際にデータセットを作成したTwitterの人によって確認されています。 私は彼が何か考えを持っていたとは思わない、彼がちょうどここに私がした素晴らしいことを投稿したそしてTwitterのこの男は言った：「ああ、私はそのデータセットを作った。 とてもクールでした。
+Suvashは、デーヴァナガリーの文章認識に対して最先端の精度を得ました。 彼は今これ以上の精度を持っていると思います。これは実際にデータセットを作成したTwitterの人が確認しています。 私は彼が何かアイデアを持っていたとは思いません、彼がしたすばらしいことを投稿したらTwitterno彼はこういった、「ああ、そのデータセットを作ったのは私だ。おめでとう、新しい記録だ」　素晴らしいことです。
+
 
 [[6:28](https://youtu.be/Egp4Zajhzog?t=388)]
 
@@ -85,11 +87,11 @@ Suvashは、Devanagariテキスト認識のための新しい最先端の精度�
 
 I really like this post from Alena Harley. She describes in quite a bit of detail about the issue of metastasizing cancers and the use of point mutations and why that's a challenging important problem. She's got some nice pictures describing what she wants to do with this and how she can go about turning this into pictures. This is the cool trick — it's the same with urning sounds into pictures and then using the lesson 1 approach. Here is turning point mutations into pictures and then using the lesson 1 approach. And it seems that she's got a new state of the art result by more than 30% beating the previous best. Somebody on Twitter who is a VP at a genomics analysis company looked at this as well and thought it looked to be a state of the art in this particular point mutation one as well. So that's pretty exciting. 
 
-私はAlena Harleyからのこの記事が本当に好きです。 彼女は、転移性癌の問題と点突然変異の使用について、そしてそれがなぜ難しい挑戦的な問題であるのかについて、かなり詳細に説明しています。 彼女はこれで何をしたいのか、そしてどうやってこれを写真に変えることができるのかを説明している素敵な写真をいくつか持っています。 これはクールなトリックです - それは絵に音を出すこと、そしてレッスン1のアプローチを使うことと同じです。 ここで点突然変異を写真に変えてから、レッスン1のアプローチを使います。 そして彼女は30％以上が前のベストを破って新しい最先端の結果を得たようです。 ゲノミクス分析会社の副社長であるTwitterの誰かもこれを見て、それもこの特定の点突然変異の中では最先端だと思いました。 とても興奮しています。
+私はAlena Harleyのこの投稿が本当に好きです。 彼女は、転移性癌の問題と突然変異部位の使用について、そしてそれがなぜ難しい挑戦的な問題であるのかについて、かなり詳細に説明しています。 彼女はこれで彼女が何をどうしたいのか説明する素晴らしい写真を持っています。これはクールなトリックです - それは絵を音にすること、そしてレッスン1のアプローチを使うことと同じです。 ここで突然変異部位を写真に変えてから、レッスン1のアプローチを使います。 そして彼女は以前の記録を30%以上打ち破る最先端の結果を得たようです。 ゲノミクス分析会社のVPであるTwitterのある人物も、これを見て突然変異部位の分野では最先端だと思いました。 とても興奮しています。
 
 When we talked about last week this idea that this simple process is something which can take you a long way, it really can. I will mention that something like this one in particular is using a lot of domain expertise, like figuring out that picture to create. I wouldn't know how to do that because I don't really know what a point mutation is, let alone how to create something that visually is meaningful that a CNN could recognize. But the actual deep learning side is actually straight forward.
 
-先週、この単純なプロセスは、あなたに長い道のりを要するものであるというこの考えについて話したとき、それは本当に可能です。 私は特にこのようなものが作成するためにその絵を考え出すことのような多くのドメインの専門知識を使っていることに言及するでしょう。 CNNが認識できるように視覚的に意味のあるものを作成する方法はもちろんのこと、私は点突然変異が何であるかについて実際にはわからないので、その方法を知りません。 しかし、実際の深い学習面は実際には簡単です。
+先週、この単純なプロセスは、あなたに長い道のりを要するものであるというこの考えについて話したとき、それは本当に可能です。 私はこの写真を生成したことのような、特定の専門領域の知識を使うことに言及するでしょう。私は突然変異部位が何なのかは実際には知らないので、CNNが認識できるための意味のある画像を作れません。しかし、実際のディープラーニングは簡単です。
 
 [[8:07](https://youtu.be/Egp4Zajhzog?t=487)]
 
